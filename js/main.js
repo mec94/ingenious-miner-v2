@@ -157,7 +157,7 @@ const shakeCave = anime.timeline({
 
 shakeCave.add({
     targets: caveElements,
-    duration: 1100,
+    duration: 900,
     rotate: ['0deg', '1deg', '0deg', '1deg', '0deg', '1deg', '0deg', '1deg', '0deg', '1deg', '0deg', '1deg'],
     translateX: [0, 3, 0, -3, 0, 3, 0, -3, 0, 3, 0, -3],
     translateY: [-3, 0, 3 , 0, -3, 0, 3 , 0, -3, 0, 3 , 0],
@@ -167,7 +167,7 @@ shakeCave.add({
 // Move Mines on Cursor Position
 
 const minesBackground = document.querySelectorAll('.content')[2].querySelector('.background');
-const backgroundMines = minesBackground.children;
+backgroundMines = minesBackground.querySelectorAll('.bg-animate')
 
 // Shake Mines
 
@@ -182,24 +182,22 @@ shakeMines.add({
 
 shakeMines.add({
     targets: backgroundMines,
-    rotate: ['0deg', '-1.5deg', '1.5deg', '-1.5deg', '1.5deg', '0deg'],
+    rotate: ['0deg', '-1deg', '1deg', '-1deg', '1deg', '0deg','1deg', '0deg'],
+    translateX: [0, 4, 0, -4, 0, 4, 0, -4],
+    translateY: [1, 0, -1, 0, -1, 0, 1, 0],
     easing: 'easeInOutElastic',
     duration: 1200,
-})
-
-shakeMines.add({
-    targets: backgroundMines,
-    duration: 3000
+    delay: anime.stagger(150)
 })
 
 var coordsX;
 
 minesBackground.addEventListener('mousemove', (element) => {
 
-    moveMines(0.0010, backgroundMines[1]);
-    moveMines(0.0008, backgroundMines[2]);
-    moveMines(0.0004, backgroundMines[3]);
-    moveMines(0.0003, backgroundMines[4]);
+    moveMines(0.0010, minesBackground.children[1]);
+    moveMines(0.0008, minesBackground.children[2]);
+    moveMines(0.0004, minesBackground.children[3]);
+    moveMines(0.0003, minesBackground.children[4]);
 
     coordsX = element.clientX - (window.innerWidth / 2);
 

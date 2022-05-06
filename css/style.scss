@@ -370,12 +370,18 @@
         position: relative;
         transition: opacity 1s ease-out;
         
-        div {
+        #particles-js {
             z-index: 8;
             position: absolute;
             width: 50%;
             left: 25%;
             height: 100%;
+        }
+
+        .backgroundGroup {
+            img:last-child {
+                z-index: -1;
+            }
         }
 
         img {
@@ -402,9 +408,6 @@
             
             &:nth-child(5) {
                 z-index: 2;
-            }
-            &:nth-child(6) {
-                z-index: -1;
             }
         }
     }

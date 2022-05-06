@@ -607,12 +607,16 @@ body {
   transition: opacity 1s ease-out;
 }
 
-.content:nth-of-type(3) .background div {
+.content:nth-of-type(3) .background #particles-js {
   z-index: 8;
   position: absolute;
   width: 50%;
   left: 25%;
   height: 100%;
+}
+
+.content:nth-of-type(3) .background .backgroundGroup img:last-child {
+  z-index: -1;
 }
 
 .content:nth-of-type(3) .background img {
@@ -644,10 +648,6 @@ body {
 
 .content:nth-of-type(3) .background img:nth-child(5) {
   z-index: 2;
-}
-
-.content:nth-of-type(3) .background img:nth-child(6) {
-  z-index: -1;
 }
 
 .content:nth-of-type(4) {
