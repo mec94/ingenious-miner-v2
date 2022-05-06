@@ -1,0 +1,68 @@
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    font-family: var(--bigFont);
+}
+
+h2, h3, h4 {
+    font-family: 'RifficFree-Bold', sans-serif;
+    text-transform: uppercase;
+}
+
+body {
+    background-color: var(--blackClr);
+    overflow-x: hidden;
+}
+
+.background {
+
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+        position: absolute;
+    }
+
+}
+
+.glassmorphism {
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, .1);
+    background: rgba(255, 255, 255, .1);
+    color: rgba(255, 255, 255, .8);
+    backdrop-filter: blur(10px);
+    transition: background .3s ease-out;
+}
+
+.glassmorphism:hover {
+    background: rgba(255, 255, 255, .2);
+}
+
+.opacityFilter {
+    transition: opacity .5s ease-in-out;
+    opacity: .1;
+}
+
+.opacityFilter.appears {
+    opacity: 1;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
