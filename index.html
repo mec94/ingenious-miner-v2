@@ -99,14 +99,12 @@
             <button type="button">Juga ahora</button>
         </div>
         <div class="background">
-            <div class="backgroundGroup">
-                <img src="./img/fondoVias_1.png" alt="">
-                <img src="./img/fondoVias_6.png" alt="">
-            </div>
+            <img class="bg-animate" src="./img/fondoVias_1.png" alt="">
             <img class="bg-animate" src="./img/fondoVias_2.png" alt="">
             <img class="bg-animate" src="./img/fondoVias_3.png" alt="">
             <img class="bg-animate" src="./img/fondoVias_4.png" alt="">
             <img class="bg-animate" src="./img/fondoVias_5.png" alt="">
+            <img class="bg-animate" src="./img/fondoVias_6.png" alt="">
             <div id="particles-js"></div>
         </div>
     </section>
@@ -119,68 +117,73 @@
                 </h3>
             </div>
             <div class="minerChoice">
-                <div class="minerChoice__bar">
 
-                </div>
-                <div class="minerChoice__miner">
-                    <div class="minerChoice__picture">
-                        <img src="./img/shadowMinerCircle.png" alt="">
+                <div class="minerChoice__minerTypes">
+                    <div class="minerChoice__miner">
+                        <div class="minerChoice__additionalInfo">
+                            <h4>
+                                Mercenario
+                            </h4>
+                        </div>
+                        <div class="minerChoice__picture colored">
+                            <img src="./img/shadowMinerCircle.png" alt="">
+                        </div>
                     </div>
-                    <div class="minerChoice__verticalBar"></div>
-                    <div class="minerChoice__additionalInfo">
-                        <h4>
-                            Mercenario
-                        </h4>
+
+                    <div class="minerChoice__miner">
+                        <div class="minerChoice__additionalInfo">
+                            <h4>
+                                Pionero
+                            </h4>
+                        </div>
+                        <div class="minerChoice__picture">
+                            <img src="./img/unknownMinerCircle.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="minerChoice__miner">
+                        <div class="minerChoice__additionalInfo">
+                            <h4>
+                                Principiante
+                            </h4>
+                        </div>
+                        <div class="minerChoice__picture">
+                            <img src="./img/beginnerMinerCircle.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="minerChoice__miner">
+                        <div class="minerChoice__additionalInfo">
+                            <h4>
+                                Experto
+                            </h4>
+                        </div>
+                        <div class="minerChoice__picture">
+                            <img src="./img/expertMinerCircle.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="minerChoice__miner">
+                        <div class="minerChoice__additionalInfo">
+                            <h4>
+                                Empresario
+                            </h4>
+                        </div>
+                        <div class="minerChoice__picture">
+                            <img src="./img/businessmanMinerCircle.png" alt="">
+                        </div>
                     </div>
                 </div>
 
-                <div class="minerChoice__miner minerChoice__miner--top">
-                    <div class="minerChoice__additionalInfo">
-                        <h4>
-                            Pionero
-                        </h4>
-                    </div>
-                    <div class="minerChoice__verticalBar"></div>
-                    <div class="minerChoice__picture">
-                        <img src="./img/unknownMinerCircle.png" alt="">
-                    </div>
+                <div class="minerChoice__selectionBar">
+                    <div class="movingCircle clicked"></div>
+                    <span class="smallCircle selected"></span>
+                    <span class="smallCircle"></span>
+                    <span class="smallCircle"></span>
+                    <span class="smallCircle"></span>
+                    <span class="smallCircle"></span>
                 </div>
 
-                <div class="minerChoice__miner">
-                    <div class="minerChoice__picture">
-                        <img src="./img/beginnerMinerCircle.png" alt="">
-                    </div>
-                    <div class="minerChoice__verticalBar"></div>
-                    <div class="minerChoice__additionalInfo">
-                        <h4>
-                            Principiante
-                        </h4>
-                    </div>
-                </div>
-
-                <div class="minerChoice__miner minerChoice__miner--top">
-                    <div class="minerChoice__additionalInfo">
-                        <h4>
-                            Experto
-                        </h4>
-                    </div>
-                    <div class="minerChoice__verticalBar"></div>
-                    <div class="minerChoice__picture">
-                        <img src="./img/expertMinerCircle.png" alt="">
-                    </div>
-                </div>
-
-                <div class="minerChoice__miner">
-                    <div class="minerChoice__picture">
-                        <img src="./img/businessmanMinerCircle.png" alt="">
-                    </div>
-                    <div class="minerChoice__verticalBar"></div>
-                    <div class="minerChoice__additionalInfo">
-                        <h4>
-                            Empresario
-                        </h4>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="content__right">
@@ -192,7 +195,7 @@
                     <img class="selectedMiner__image" src="./img/expertMinerAnimated.webp" alt="">
                     <img class="selectedMiner__image" src="./img/businessmanMinerAnimated.webp" alt="">
                 </div>
-                <div class="selectedMiner__info">
+                <div class="selectedMiner__info glassmorphism">
                     <h4 class="selectedMiner__title">
                         Minero Experto
                     </h4>

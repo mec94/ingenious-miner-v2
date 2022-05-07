@@ -78,13 +78,11 @@ const intersectElement = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             
             isIntersecting = true;
-            console.log('true')
         }
 
         else {
            
             isIntersecting = false;
-            console.log('false')
         }
     })
 
@@ -99,11 +97,11 @@ function scrollElementWithPercent (scrollPercentX, elementDisplaced) {
     let translate = ['translateY(', percentage, '%)'].join('');
     
 
-    if (percentage >= -51) {
+    if (percentage >= -50) {
         elementDisplaced.style.transform = translate;
     }
     else {
-        elementDisplaced.style.transform = 'translateY(-51%)'
+        elementDisplaced.style.transform = 'translateY(-50%)'
     }
 
 }
@@ -157,17 +155,17 @@ const shakeCave = anime.timeline({
 
 shakeCave.add({
     targets: caveElements,
-    duration: 900,
-    rotate: ['0deg', '1deg', '0deg', '1deg', '0deg', '1deg', '0deg', '1deg', '0deg', '1deg', '0deg', '1deg'],
-    translateX: [0, 3, 0, -3, 0, 3, 0, -3, 0, 3, 0, -3],
-    translateY: [-3, 0, 3 , 0, -3, 0, 3 , 0, -3, 0, 3 , 0],
-    easing: 'easeInOutBounce'
+    duration: 1000,
+    rotate: ['0deg', '1deg', '-1deg', '1deg', '-1deg', '1deg', '-1deg', '1deg', '0deg'],
+    translateX: [0, -3, 3, -3, 3, -3, 3, -3, 3, 0],
+    translateY: [0, 2, -2, 2, -2, 2, -2, 2, -2, 0],
+    easing: 'linear'
 })
 
 // Move Mines on Cursor Position
 
 const minesBackground = document.querySelectorAll('.content')[2].querySelector('.background');
-backgroundMines = minesBackground.querySelectorAll('.bg-animate')
+animateMines = minesBackground.querySelectorAll('.bg-animate');
 
 // Shake Mines
 
@@ -176,28 +174,26 @@ const shakeMines = anime.timeline({
 })
 
 shakeMines.add({
-    targets: backgroundMines,
-    duration: 2000
+    duration: 3000
 })
 
 shakeMines.add({
-    targets: backgroundMines,
-    rotate: ['0deg', '-1deg', '1deg', '-1deg', '1deg', '0deg','1deg', '0deg'],
-    translateX: [0, 4, 0, -4, 0, 4, 0, -4],
-    translateY: [1, 0, -1, 0, -1, 0, 1, 0],
-    easing: 'easeInOutElastic',
+    targets: animateMines,
+    rotate: ['0deg', '1deg', '-1deg', '1deg', '-1deg', '1deg', '-1deg', '1deg', '0deg'],
+    translateX: [0, -5, 5, -5, 5, -5, 5, -5, 5, 0],
+    translateY: [0, 4, -4, 4, -4, 4, -4, 4, -4, 0],
+    easing: 'easeInOutBounce',
     duration: 1200,
-    delay: anime.stagger(150)
 })
 
 var coordsX;
 
 minesBackground.addEventListener('mousemove', (element) => {
 
-    moveMines(0.0010, minesBackground.children[1]);
-    moveMines(0.0008, minesBackground.children[2]);
-    moveMines(0.0004, minesBackground.children[3]);
-    moveMines(0.0003, minesBackground.children[4]);
+    moveMines(0.0012, minesBackground.children[1]);
+    moveMines(0.0010, minesBackground.children[2]);
+    moveMines(0.0006, minesBackground.children[3]);
+    moveMines(0.0004, minesBackground.children[4]);
 
     coordsX = element.clientX - (window.innerWidth / 2);
 
@@ -214,7 +210,9 @@ minesBackground.addEventListener('mousemove', (element) => {
 // Miner Selector
 
 let minerSelection = contentSection[3].querySelectorAll('.minerChoice__miner');
+let minerSelectionBar = contentSection[3].querySelector('.minerChoice__selectionBar');
 let minerDisplay = contentSection[3].querySelector('.selectedMiner');
+var movingCircle = contentSection[3].querySelector('.minerChoice .movingCircle');
 
 let minerName = ['Mercenario', 'Pionero', 'Principiante', 'Experto', 'Empresario'];
 let minerPicture = ['expertMinerAnimated', 'amateurMinerAnimated', 'amateurMinerAnimated', 'expertMinerAnimated', 'businessmanMinerAnimated'];
@@ -233,6 +231,36 @@ minerSelection.forEach((miner, index) => {
         minerDisplay.querySelectorAll('.selectedMiner__image')[index].classList.add('show');
         minerDisplay.querySelector('h4').textContent = minerName[index];
         minerDisplay.querySelector('p').textContent = minerInfo[index];
+
+        contentSection[3].querySelector('.minerChoice__picture.colored').classList.remove('colored');
+        contentSection[3].querySelectorAll('.minerChoice__picture')[index].classList.add('colored');
+
+        minerSelectionBar.querySelector('.smallCircle.selected').classList.remove('selected');
+        minerSelectionBar.querySelectorAll('.smallCircle')[index].classList.add('selected');
+
+        function translateCircle(percentage) {
+            let parentWidth = movingCircle.parentElement.offsetWidth;
+            let translateC = ['translateX(',percentage * parentWidth,'px)'].join('');
+            return movingCircle.style.transform = translateC;
+        }
+
+        switch(index) {
+            case 0:
+                movingCircle.style.transform = translateCircle(-0.010);
+                break;
+            case 1:
+                movingCircle.style.transform = translateCircle(0.234);
+                break;
+            case 2:
+                movingCircle.style.transform = translateCircle(0.4775);
+                break;
+            case 3:
+                movingCircle.style.transform = translateCircle(0.721);
+                break;
+            case 4:
+                movingCircle.style.transform = translateCircle(0.966);
+                break;
+        } 
     })
 })
 

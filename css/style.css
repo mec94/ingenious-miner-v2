@@ -542,8 +542,8 @@ body {
       flex-wrap: nowrap;
   z-index: 160;
   padding: 8em 0 8em;
-  -webkit-box-shadow: -100px -50px 120px var(--blackClr), 100px -50px 120px var(--blackClr);
-          box-shadow: -100px -50px 120px var(--blackClr), 100px -50px 120px var(--blackClr);
+  -webkit-box-shadow: -100px -30px 80px var(--blackClr), 100px -30px 80px var(--blackClr), -200px -30px 80px var(--blackClr), 200px -30px 80px var(--blackClr);
+          box-shadow: -100px -30px 80px var(--blackClr), 100px -30px 80px var(--blackClr), -200px -30px 80px var(--blackClr), 200px -30px 80px var(--blackClr);
 }
 
 .content:nth-of-type(3) .content__top {
@@ -615,10 +615,6 @@ body {
   height: 100%;
 }
 
-.content:nth-of-type(3) .background .backgroundGroup img:last-child {
-  z-index: -1;
-}
-
 .content:nth-of-type(3) .background img {
   position: absolute;
   top: 0;
@@ -648,6 +644,10 @@ body {
 
 .content:nth-of-type(3) .background img:nth-child(5) {
   z-index: 2;
+}
+
+.content:nth-of-type(3) .background img:nth-child(6) {
+  z-index: -1;
 }
 
 .content:nth-of-type(4) {
@@ -693,40 +693,8 @@ body {
 }
 
 .content:nth-of-type(4) .content__left .minerChoice {
-  position: relative;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-}
-
-.content:nth-of-type(4) .content__left .minerChoice__bar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 10px;
-  border: 1px solid var(--purpleClr);
-  background: -webkit-gradient(linear, left top, left bottom, from(var(--brightYellowClr)), to(var(--orangeClr)));
-  background: linear-gradient(to bottom, var(--brightYellowClr), var(--orangeClr));
-  -webkit-box-shadow: 0 0 15px var(--orangeClr);
-          box-shadow: 0 0 15px var(--orangeClr);
-  border-radius: 20px;
-}
-
-.content:nth-of-type(4) .content__left .minerChoice__miner {
-  position: relative;
-  top: -20%;
+  height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -734,6 +702,24 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.content:nth-of-type(4) .content__left .minerChoice__minerTypes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -742,31 +728,52 @@ body {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  height: 10em;
-  cursor: pointer;
+  width: 88%;
 }
 
-.content:nth-of-type(4) .content__left .minerChoice__miner--top {
-  top: -80%;
+.content:nth-of-type(4) .content__left .minerChoice__miner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  cursor: pointer;
 }
 
 .content:nth-of-type(4) .content__left .minerChoice__picture {
   position: relative;
-  height: 5em;
-  width: 5em;
+  height: 4em;
+  width: 4em;
   background: var(--whiteClr);
   border: 2px solid var(--diamondPinkClr);
   border-radius: 50%;
-  -webkit-transition: -webkit-filter .3s ease-in;
-  transition: -webkit-filter .3s ease-in;
-  transition: filter .3s ease-in;
-  transition: filter .3s ease-in, -webkit-filter .3s ease-in;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: -webkit-filter .3s ease-out;
+  transition: -webkit-filter .3s ease-out;
+  transition: filter .3s ease-out;
+  transition: filter .3s ease-out, -webkit-filter .3s ease-out;
   z-index: 10;
 }
 
 .content:nth-of-type(4) .content__left .minerChoice__picture:hover {
-  -webkit-filter: brightness(120%);
-          filter: brightness(120%);
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.content:nth-of-type(4) .content__left .minerChoice__picture.colored {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
 }
 
 .content:nth-of-type(4) .content__left .minerChoice__picture::before {
@@ -775,18 +782,15 @@ body {
   content: '';
   width: 120%;
   height: 120%;
-  top: -14%;
-  left: -14.5%;
+  top: -15%;
+  left: -15%;
   border-radius: 50%;
-  border: 3px outset var(--lightBlueClr);
+  border: 3px outset var(--orangeClr);
+  opacity: .5;
   -webkit-animation: rotateCircle 8s ease-in-out infinite;
           animation: rotateCircle 8s ease-in-out infinite;
-  -webkit-transition: background .3s ease-out;
-  transition: background .3s ease-out;
-}
-
-.content:nth-of-type(4) .content__left .minerChoice__picture:hover::before {
-  background: var(--lightBlueClr);
+  -webkit-transition: background .3s ease-out, border .5s ease-out;
+  transition: background .3s ease-out, border .5s ease-out;
 }
 
 @-webkit-keyframes rotateCircle {
@@ -849,33 +853,114 @@ body {
 }
 
 .content:nth-of-type(4) .content__left .minerChoice__additionalInfo {
-  height: 20%;
-  margin-top: .4em;
+  margin-bottom: 1.5em;
+  width: 100%;
 }
 
 .content:nth-of-type(4) .content__left .minerChoice__additionalInfo h4 {
   color: var(--whiteClr);
+  text-align: center;
   position: relative;
+  font-size: .8em;
   letter-spacing: 1.5px;
 }
 
-.content:nth-of-type(4) .content__left .minerChoice__additionalInfo h4::before {
-  content: '';
-  position: absolute;
-  display: block;
-  width: .5em;
-  height: .5em;
-  top: 25%;
-  left: -1em;
-  background-color: var(--diamondPinkClr);
-  border-radius: 50%;
+.content:nth-of-type(4) .content__left .minerChoice__selectionBar {
+  margin-top: 10%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 80%;
+  height: 1px;
 }
 
-.content:nth-of-type(4) .content__left .minerChoice__verticalBar {
-  height: 30%;
-  width: 4px;
-  border-radius: 10px;
+.content:nth-of-type(4) .content__left .minerChoice__selectionBar::before {
+  position: absolute;
+  content: '';
+  width: 120%;
+  left: -10%;
+  height: 1px;
+  background: var(--whiteClr);
+  border-radius: 20px;
+}
+
+.content:nth-of-type(4) .content__left .minerChoice__selectionBar .movingCircle {
+  position: absolute;
+  z-index: 10;
+  bottom: -.7em;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  border: 2px solid var(--diamondPinkClr);
+  background: var(--whiteClr);
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  transition: transform 1s ease-out;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+  -webkit-transform: translateX(-25%);
+          transform: translateX(-25%);
+}
+
+.content:nth-of-type(4) .content__left .minerChoice__selectionBar .movingCircle::before {
+  position: absolute;
+  content: '';
+  width: .5em;
+  height: .5em;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--lightPurpleClr);
+}
+
+.content:nth-of-type(4) .content__left .minerChoice__selectionBar .movingCircle::after {
+  position: absolute;
+  content: '';
+  left: 47%;
+  bottom: 0;
+  width: 1px;
+  height: 100%;
   background: var(--diamondPinkClr);
+  z-index: -1;
+}
+
+.content:nth-of-type(4) .content__left .minerChoice__selectionBar .movingCircle.clicked::after {
+  -webkit-transition-delay: .5s;
+          transition-delay: .5s;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.content:nth-of-type(4) .content__left .minerChoice__selectionBar .smallCircle {
+  position: relative;
+  width: .8em;
+  height: .8em;
+  border-radius: 50%;
+  background: var(--whiteClr);
+  z-index: 10;
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+}
+
+.content:nth-of-type(4) .content__left .minerChoice__selectionBar .smallCircle.selected {
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 .content:nth-of-type(4) .content__right {
@@ -973,7 +1058,7 @@ body {
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__title {
-  border-bottom: 1px solid var(--diamondPinkClr);
+  border-bottom: 1px solid var(--whiteClr);
   color: var(--whiteClr);
   text-align: center;
   padding-bottom: .5em;
@@ -986,31 +1071,29 @@ body {
   border-radius: 10px;
   z-index: 10;
   overflow: hidden;
-}
+  /*&::after {
+                    content: '';
+                    position: absolute;
+                    top: 0.5%;
+                    left: 0.2%;
+                    width: 99.5%;
+                    height: 98.9%;
+                    background: var(--brownClr);
+                    z-index: -1;
+                    border-radius: 10px;
+                }
 
-.content:nth-of-type(4) .content__right .selectedMiner__info::after {
-  content: '';
-  position: absolute;
-  top: 0.5%;
-  left: 0.2%;
-  width: 99.5%;
-  height: 98.9%;
-  background: var(--brownClr);
-  z-index: -1;
-  border-radius: 10px;
-}
-
-.content:nth-of-type(4) .content__right .selectedMiner__info::before {
-  content: '';
-  position: absolute;
-  width: 150%;
-  height: 60%;
-  top: 20%;
-  left: -25%;
-  background: var(--diamondPinkClr);
-  z-index: -1;
-  -webkit-animation: rotateBorder 8s ease-in-out infinite;
-          animation: rotateBorder 8s ease-in-out infinite;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 150%;
+                    height: 60%;
+                    top: 20%;
+                    left: -25%;
+                    background: var(--diamondPinkClr);
+                    z-index: -1;
+                    animation: rotateBorder 8s ease-in-out infinite;
+                }*/
 }
 
 @-webkit-keyframes rotateBorder {

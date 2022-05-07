@@ -321,7 +321,7 @@
     z-index: 160;
     padding: 8em 0 8em;
 
-    box-shadow: -100px -50px 120px var(--blackClr), 100px -50px 120px var(--blackClr);
+    box-shadow: -100px -30px 80px var(--blackClr), 100px -30px 80px var(--blackClr), -200px -30px 80px var(--blackClr), 200px -30px  80px var(--blackClr);
 
     .content__top {
         
@@ -378,12 +378,6 @@
             height: 100%;
         }
 
-        .backgroundGroup {
-            img:last-child {
-                z-index: -1;
-            }
-        }
-
         img {
             position: absolute;
             top: 0;
@@ -408,6 +402,10 @@
             
             &:nth-child(5) {
                 z-index: 2;
+            }
+
+            &:nth-child(6) {
+                z-index: -1;
             }
         }
     }
@@ -434,47 +432,40 @@
         }
 
         .minerChoice {
-            position: relative;
             width: 100%;
-            @include dispFlex(row, space-around, flex-start, nowrap);
+            height: 50%;
+            @include dispFlex(column, flex-start, center, nowrap);
 
-            &__bar {
-                position: absolute;
-                top: 0;
-                width: 100%;
-                height: 10px;
-                border: 1px solid var(--purpleClr);
-                background: linear-gradient(to bottom, var(--brightYellowClr), var(--orangeClr));
-                box-shadow: 0 0 15px var(--orangeClr);
-                border-radius: 20px;
+            &__minerTypes {
+                @include dispFlex(row, space-between, center, nowrap);
+                width: 88%;
             }
 
             &__miner {
                 
-                position: relative;
-                top: -20%;
-                @include dispFlex(column, space-between, center, nowrap);
-                height: 10em;
+                @include dispFlex(column, flex-start, center, nowrap);
                 cursor: pointer;
-
-                &--top {
-                    top: -80%;
-                }
             }
 
             &__picture {
 
                 position: relative;
-                height: 5em;
-                width: 5em;
+                height: 4em;
+                width: 4em;
                 background: var(--whiteClr);
                 border: 2px solid var(--diamondPinkClr);
                 border-radius: 50%;
-                transition: filter .3s ease-in;
+                filter: grayscale(100%);
+                transition: filter .3s ease-out;
                 z-index: 10;
 
                 &:hover {
-                    filter: brightness(120%)
+                    filter: grayscale(0%);
+                }
+
+                &.colored {
+
+                    filter: grayscale(0%);
                 }
 
                 &::before {
@@ -483,16 +474,13 @@
                     content: '';
                     width: 120%;
                     height: 120%;
-                    top: -14%;
-                    left: -14.5%;
+                    top: -15%;
+                    left: -15%;
                     border-radius: 50%;
-                    border: 3px outset var(--lightBlueClr);
+                    border: 3px outset var(--orangeClr);
+                    opacity: .5;
                     animation: rotateCircle 8s ease-in-out infinite;
-                    transition: background .3s ease-out;
-                }
-
-                &:hover::before {
-                    background: var(--lightBlueClr);
+                    transition: background .3s ease-out, border .5s ease-out;
                 }
 
                 @keyframes rotateCircle {
@@ -524,33 +512,92 @@
             }
 
             &__additionalInfo {
-                height: 20%;
-                margin-top: .4em;
+                margin-bottom: 1.5em;
+                width: 100%;
 
                 h4 {
                     color: var(--whiteClr);
+                    text-align: center;
                     position: relative;
+                    font-size: .8em;
                     letter-spacing: 1.5px;
                 }
 
-                h4::before {
-                    content: '';
-                    position: absolute;
-                    display: block;
-                    width: .5em;
-                    height: .5em;
-                    top: 25%;
-                    left: -1em;
-                    background-color: var(--diamondPinkClr);
-                    border-radius: 50%;
-                }
             }
 
-            &__verticalBar {
-                height: 30%;
-                width: 4px;
-                border-radius: 10px;
-                background: var(--diamondPinkClr);
+            &__selectionBar {
+                margin-top: 10%;
+                position: relative;
+                @include dispFlex(row, space-between, center, nowrap);
+                width: 80%;
+                height: 1px;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: 120%;
+                    left: -10%;
+                    height: 1px;
+                    background: var(--whiteClr);
+                    border-radius: 20px;
+                }
+
+                .movingCircle {
+                    position: absolute;
+                    z-index: 10;
+                    bottom: -.7em;
+                    width: 1.5em;
+                    height: 1.5em;
+                    border-radius: 50%;
+                    border: 2px solid var(--diamondPinkClr);
+                    background: var(--whiteClr);
+                    transition: transform 1s ease-out;
+                    transform: translateX(-25%);
+
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        width: .5em;
+                        height: .5em;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        border-radius: 50%;
+                        background: var(--lightPurpleClr);
+                    }
+
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        left: 47%;
+                        bottom: 0;
+                        width: 1px;
+                        height: 100%;
+                        background: var(--diamondPinkClr);
+                        z-index: -1;
+                    }
+
+                    &.clicked::after {
+                        transition-delay: .5s;
+                        transform: translateY(-100%);
+                    }
+                    
+                }
+
+                .smallCircle {
+                    position: relative;
+                    width: .8em;
+                    height: .8em;
+                    border-radius: 50%;
+                    background: var(--whiteClr);
+                    z-index: 10;
+                    transition: transform .3s ease-out;
+
+                    &.selected {
+                        transform: scale(0);
+                    }
+
+                }
             }
 
         }
@@ -619,7 +666,7 @@
 
 
             &__title {
-                border-bottom: 1px solid var(--diamondPinkClr);
+                border-bottom: 1px solid var(--whiteClr);
                 color: var(--whiteClr);
                 text-align: center;
                 padding-bottom: .5em;
@@ -634,7 +681,7 @@
                 z-index: 10;
                 overflow: hidden;
 
-                &::after {
+                /*&::after {
                     content: '';
                     position: absolute;
                     top: 0.5%;
@@ -656,7 +703,7 @@
                     background: var(--diamondPinkClr);
                     z-index: -1;
                     animation: rotateBorder 8s ease-in-out infinite;
-                }
+                }*/
 
                 @keyframes rotateBorder {
 
