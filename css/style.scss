@@ -114,12 +114,47 @@
         }
         
         &__item {
-            width: 2.5em;
-            padding: .3em;
+            width: 4em;
+            height: 4em;
+            position: relative;
             transition: transform .3s ease-out;
 
             &:hover {
-                transform: scale(1.1)
+                transform: scale(1.1);
+            }
+
+            img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 2.2em;
+                height: 2.2em;
+                transform: translate(-50%, -50%);
+            }
+
+            .circle {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 4em;
+                width: 4em;
+
+                ellipse {
+                    stroke-dasharray: 200;
+                    stroke-dashoffset: 200;
+                    stroke: var(--whiteOpacityClr);
+                    stroke-width: 1.5;
+                    transition: stroke-dashoffset .5s ease-out, transform .4s ease-out;
+                    fill: transparent;
+                }
+
+                &:hover {
+
+                    ellipse {
+                        stroke-dashoffset: 0;
+                        stroke-dasharray: 200;
+                    }
+                }
             }
         }
     }
@@ -479,7 +514,7 @@
                     border-radius: 50%;
                     border: 3px outset var(--orangeClr);
                     opacity: .5;
-                    animation: rotateCircle 8s ease-in-out infinite;
+                    animation: rotateCircle 7s ease-in-out infinite;
                     transition: background .3s ease-out, border .5s ease-out;
                 }
 
@@ -487,21 +522,17 @@
                     0% {
                         transform: rotate(0deg);
                     }
-                    20% {
+                    25% {
                         transform: rotate(90deg);
                     }
-                    40% {
+                    50% {
                         transform: rotate(180deg);
                     }
-                    60% {
+                    75% {
                         transform: rotate(270deg);
                     }
-                    80% {
-                        transform: rotate(360deg);
-                    }
-
                     100% {
-                        transform: rotate(-360deg);
+                        transform: rotate(360deg);
                     }
                 }
 
@@ -543,44 +574,45 @@
                 }
 
                 .movingCircle {
-                    position: absolute;
-                    z-index: 10;
-                    bottom: -.7em;
-                    width: 1.5em;
-                    height: 1.5em;
-                    border-radius: 50%;
-                    border: 2px solid var(--diamondPinkClr);
-                    background: var(--whiteClr);
-                    transition: transform 1s ease-out;
-                    transform: translateX(-25%);
 
-                    &::before {
+                    position: absolute;
+                    transition: transform .5s ease-out;
+                    transform: translateX(-30%);
+
+                    &__roundedCircle {
                         position: absolute;
-                        content: '';
-                        width: .5em;
-                        height: .5em;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
+                        bottom: -.7em;
+                        width: 1.5em;
+                        height: 1.5em;
                         border-radius: 50%;
-                        background: var(--lightPurpleClr);
+                        border: 2px solid var(--diamondPinkClr);
+                        background: var(--whiteClr);
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            width: .5em;
+                            height: .5em;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            border-radius: 50%;
+                            background: var(--lightPurpleClr);
+                        }
                     }
 
-                    &::after {
+                    &__verticalBar {
                         position: absolute;
-                        content: '';
-                        left: 47%;
                         bottom: 0;
+                        left: .7em;
                         width: 1px;
-                        height: 100%;
+                        height: .8em;
                         background: var(--diamondPinkClr);
                         z-index: -1;
+                        transform-origin: bottom;
+                      
                     }
-
-                    &.clicked::after {
-                        transition-delay: .5s;
-                        transform: translateY(-100%);
-                    }
+                
                     
                 }
 

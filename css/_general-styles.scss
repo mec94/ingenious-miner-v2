@@ -39,8 +39,8 @@ body {
 
 .glassmorphism {
     text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, .1);
-    background: rgba(255, 255, 255, .1);
+    border: 1px solid var(--whiteOpacityClr);
+    background: var(--whiteOpacityClr);
     color: rgba(255, 255, 255, .8);
     backdrop-filter: blur(10px);
     transition: background .3s ease-out;

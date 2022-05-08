@@ -261,6 +261,14 @@ minerSelection.forEach((miner, index) => {
                 movingCircle.style.transform = translateCircle(0.966);
                 break;
         } 
+
+        anime({
+            targets: movingCircle.lastElementChild,
+            scaleY: '500%',
+            duration: 300,
+            delay: 400,
+            easing: 'linear'
+        })
     })
 })
 
