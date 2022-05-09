@@ -15,9 +15,6 @@ window.addEventListener('scroll', () => {
 
     let firstSectionBg = contentSection[0].querySelector('.background');
 
-    //scrollElement(0, 0.03, 500, bgFirstSection.children[1], windowOffset);
-    //scrollElement(0, -0.07, 500, firstSectionBg.children[2], windowOffset);
-
     transformOnScroll('translateY', windowOffset, 0.008,'%', translateElement2, firstSectionBg.children[1], 2.5);
     transformOnScroll('translateY', windowOffset, -0.008,'%', translateElement, firstSectionBg.children[2], -5);
 
@@ -27,7 +24,7 @@ window.addEventListener('scroll', () => {
 
     let firstSectionContent = contentSection[0].querySelector('.content__top');
 
-    transformOnScroll('translateY', windowOffset, -0.3,'%', translateElement, firstSectionContent, -50);
+    transformOnScroll('translateY', windowOffset, -0.5,'%', translateElement, firstSectionContent, -50);
 
     // Scroll Background Second Section
 

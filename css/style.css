@@ -90,10 +90,10 @@ body {
 .fade {
   -webkit-filter: brightness(50%);
           filter: brightness(50%);
-  -webkit-transition: -webkit-filter .6s ease-out;
-  transition: -webkit-filter .6s ease-out;
-  transition: filter .6s ease-out;
-  transition: filter .6s ease-out, -webkit-filter .6s ease-out;
+  -webkit-transition: -webkit-filter 1s ease-out;
+  transition: -webkit-filter 1s ease-out;
+  transition: filter 1s ease-out;
+  transition: filter 1s ease-out, -webkit-filter 1s ease-out;
 }
 
 .fade.appears {
