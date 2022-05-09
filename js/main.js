@@ -38,7 +38,6 @@ function translateElement(transformation, affectedElement, displacement, maxValu
 
     if (displacement >= maxValue) {
         affectedElement.style.transform = transformation;
-        console.log('displacement: ' + displacement + ' maxValue: '+ maxValue);
     }
     else {
         affectedElement.style.transform = 'translateY(' + maxValue + '%)';
@@ -49,7 +48,6 @@ function translateElement2(transformation, affectedElement, displacement, maxVal
 
     if (displacement <= maxValue) {
         affectedElement.style.transform = transformation;
-        console.log('displacement: ' + displacement + ' maxValue: '+ maxValue);
     }
 }
 
@@ -73,17 +71,6 @@ function transformOnScroll(transformType, offsetObject, displaceVal, unit, condi
 
 }
 
-
-function scrollElement (scrollPercentX, scrollPercentY, offsetRange, elementDisplaced) {
-  
-    let translate = ['translate(', windowOffset * scrollPercentX, 'px,', windowOffset * scrollPercentY, 'px)'].join('');
-
-    if (windowOffset <= offsetRange) {
-
-        elementDisplaced.style.transform = translate;
-    }
-
-}
 
 function addClassOnScroll (element, classEl, offsetRange) {
 
@@ -273,7 +260,7 @@ let mineTitle =
 
 let mineImage =
     [
-        'undergroundMine',
+        'gameplayVideoUndergroundMine',
         'subacuaticMine',
         'desertMine',
         'openPitMine',
@@ -285,12 +272,12 @@ minesSelector.forEach((mineType, index) => {
 
         if (index == 0 || index == 1) {
             selectedMine.querySelector('h4').textContent = mineTitle[index];
-            selectedMine.querySelector('img').src = `./img/${mineImage[index]}.png`;
+            selectedMine.querySelector('video source').src = `./img/${mineImage[index]}.mp4`;
         }
 
         (index == 0) ? mineTools.style.opacity = '1': mineTools.style.opacity = '0';
 
-        if (index != 0) mineType.classList.toggle('revealed');
+        if (index != 0) mineType.querySelector('.mineSelector__flipFace').classList.toggle('revealed');
 
     })
 })
@@ -315,3 +302,18 @@ seasonTitle.firstElementChild.innerHTML = seasonTitle.textContent.replace(/\S/g,
         endDelay: 2000
     })
 
+// Swiper JS for Team Section
+
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    speed: 1000,
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 80,
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });

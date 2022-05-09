@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.css">
     <meta name="description" content="Ingenious Miner es un juego NFT con economía estable">
     <title>Ingenious Miner</title>
 </head>
@@ -239,7 +240,9 @@
                         </h4>
                     </div>
                     <div class="selectedMine__picture">
-                        <img src="./img/mineBackground.png" alt="">
+                        <video autoplay muted loop>
+                            <source src="./img/gameplayVideoUndergroundMine.mp4" type="video/mp4" />
+                        </video>
                     </div>
                 </div>
     
@@ -264,77 +267,72 @@
             <div class="content__right">
                 <div class="mineSelector">
                     <div class="mineSelector__item">
-                        <div class="mineSelector__face mineSelector__front">
-                            <div class="mineSelector__picture mineSelector__picture--bigger">
-                                <img src="./img/undergroundMine.png" alt="">
-                            </div>
-                            <div class="mineSelector__title">
-                                <h4>Mina Subterránea</h4>
-                            </div>
+                        <div class="mineSelector__picture mineSelector__picture--bigger">
+                            <img src="./img/undergroundMine.png" alt="">
                         </div>
-                        <div class="mineSelector__face mineSelector__back">
-                            <div class="mineSelector__picture">
-                                <img src="./img/undergroundMine.png" alt="">
+                        <div class="mineSelector__flipFace">
+                            <div class="mineSelector__face mineSelector__front">
+                                <div class="mineSelector__title">
+                                    <h4>Mina Subterránea</h4>
+                                </div>
                             </div>
-                            <div class="mineSelector__title">
-                                <h4>Próximamente</h4>
+                            <div class="mineSelector__face mineSelector__back">
+                                <div class="mineSelector__title">
+                                    <h4>Próximamente</h4>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="mineSelector__item">
-                        <div class="mineSelector__face mineSelector__front">
-                            <div class="mineSelector__picture">
-                                <img src="./img/subacuaticMine.png" alt="">
-                            </div>
-                            <div class="mineSelector__title">
-                                <h4>Mina Subacuática</h4>
-                            </div>
-                        </div>
-                        <div class="mineSelector__face mineSelector__back">
-                            <div class="mineSelector__picture">
-                                <img src="./img/subacuaticMine.png" alt="">
-                            </div>
-                            <div class="mineSelector__title">
-                                <h4>Próximamente</h4>
-                            </div>
-                        </div>
 
-                    </div>
                     <div class="mineSelector__item">
-                        
-                           <div class="mineSelector__face mineSelector__front">
-                            <div class="mineSelector__picture">
-                                <img src="./img/desertMine.png" alt="">
+                        <div class="mineSelector__picture">
+                            <img src="./img/subacuaticMine.png" alt="">
+                        </div>
+                        <div class="mineSelector__flipFace">
+                            <div class="mineSelector__face mineSelector__front">
+                                <div class="mineSelector__title">
+                                    <h4>Mina Subacuática</h4>
+                                </div>
                             </div>
-                            <div class="mineSelector__title">
-                                <h4>Mina Desértica</h4>
+                            <div class="mineSelector__face mineSelector__back">
+                                <div class="mineSelector__title">
+                                    <h4>Próximamente</h4>
+                                </div>
                             </div>
                         </div>
-                        <div class="mineSelector__face mineSelector__back">
-                            <div class="mineSelector__picture">
-                                <img src="./img/desertMine.png" alt="">
-                            </div>
-                            <div class="mineSelector__title">
-                                <h4>Próximamente</h4>
-                            </div>
-                        </div>
+                    </div>
 
-                    </div>
                     <div class="mineSelector__item">
-                        <div class="mineSelector__face mineSelector__front">
-                            <div class="mineSelector__picture">
-                                <img src="./img/openPitMine.png" alt="">
+                        <div class="mineSelector__picture mineSelector__picture--bigger2">
+                            <img src="./img/desertMine.png" alt="">
+                        </div>
+                        <div class="mineSelector__flipFace">
+                            <div class="mineSelector__face mineSelector__front">
+                                <div class="mineSelector__title">
+                                    <h4>Mina Desértica</h4>
+                                </div>
                             </div>
-                            <div class="mineSelector__title">
-                                <h4>Mina Cielo Abierto</h4>
+                            <div class="mineSelector__face mineSelector__back">
+                                <div class="mineSelector__title">
+                                    <h4>Próximamente</h4>
+                                </div>
                             </div>
                         </div>
-                        <div class="mineSelector__face mineSelector__back">
-                            <div class="mineSelector__picture">
-                                <img src="./img/openPitMine.png" alt="">
+                    </div>
+                    <div class="mineSelector__item">
+                        <div class="mineSelector__picture">
+                            <img src="./img/openPitMine.png" alt="">
+                        </div>
+                        <div class="mineSelector__flipFace">
+                            <div class="mineSelector__face mineSelector__front">
+                                <div class="mineSelector__title">
+                                    <h4>Mina Cielo Abierto</h4>
+                                </div>
                             </div>
-                            <div class="mineSelector__title">
-                                <h4>Próximamente</h4>
+                            <div class="mineSelector__face mineSelector__back">
+                                <div class="mineSelector__title">
+                                    <h4>Próximamente</h4>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -356,10 +354,6 @@
                 <div class="customMiner__picture">
                     <img src="./img/coal-miner-silhouette-2993fc-original.svg" alt="">
                 </div>
-                <!--<div class="customMiner__helmet"></div>
-                <div class="customMiner__chest"></div>
-                <div class="customMiner__trousers"></div>
-                <div class="customMiner__shoes"></div>-->
             </div>
         </div>
 
@@ -372,17 +366,107 @@
         <div class="content__top">
             <div class="titleContainer">
                 <h3>
-                    Descubrí nuestro universo
+                    Equipo
                 </h3>
             </div>
         </div>
         <div class="content__bottom">
-            <!--<div class="minesMap">
-                <img src="./img/player-guide-map-1440-32575baa2f8d2b2bfd5cfd07e11d1361.png" alt="">
-            </div>-->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-img">
+                            <img src="./img/team/crewpic-1.png" />
+                        </div>
+                        <h4>Lucas Ledesma</h4>
+                        <p>CEO & Founder</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-img">
+                            <img src="./img/team/crewpic-2.png" />
+                        </div>
+                        <h4>Gerardo Lopez</h4>
+                        <p>COO & Founder</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-img">
+                            <img src="./img/team/crewpic-3.png" />
+                        </div>
+                        <h4>Manuela Escudero</h4>
+                        <p>Dirección General</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-img">
+                            <img src="./img/team/crewpic-7.png" />
+                        </div>
+                        <h4>Pablo Estevez</h4>
+                        <p>Líder de programación</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-img">
+                            <img src="./img/team/crewpic-6.png" />
+                        </div>
+                        <h4>Matias Mieras</h4>
+                        <p>Líder de marketing</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-img">
+                            <img src="./img/team/crewpic-5.png" />
+                        </div>
+                        <h4>Macarena Rivas</h4>
+                        <p>Líder de administración</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-img">
+                            <img src="./img/team/crewpic-4.png" />
+                        </div>
+                        <h4>Facundo Ledesma</h4>
+                        <p>Líder de exchange</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-img">
+                            <img src="./img/team/crewpic-10.png" />
+                        </div>
+                        <h4>Lucas Romano</h4>
+                        <p>Research & Story Telling</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-img">
+                            <img src="./img/team/crewpic-9.png" />
+                        </div>
+                        <h4>Verónica Haiwit</h4>
+                        <p>Social Media Manager</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-img">
+                            <img src="./img/team/crewpic-12.png" />
+                        </div>
+                        <h4>Lucia Errecart</h4>
+                        <p>Diseñadora Gráfica</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-img">
+                            <img src="./img/team/crewpic-11.png" />
+                        </div>
+                        <h4>Nazareno Molinari</h4>
+                        <p>Programación Front-End</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-img">
+                            <img src="./img/team/crewpic-8.png" />
+                        </div>
+                        <h4>Mijail Cuesta</h4>
+                        <p>Diseño web y FrontEnd</p>
+                    </div>
+                </div>
+              
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
         </div>
 
-        <1<div class="background">
+        <div class="background">
             <img src="./img/fondoTierra2.png" alt="">
         </div>
     </section>
@@ -390,6 +474,7 @@
     <script type="text/javascript" src="./js/particles.min.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
     <script type="text/javascript" src="./js/anime.min.js"></script>
+    <script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
 </body>
 </html>
