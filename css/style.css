@@ -72,22 +72,33 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.opacityFilter {
+.opacity {
   -webkit-transition: opacity .5s ease-in-out;
   transition: opacity .5s ease-in-out;
   opacity: .1;
 }
 
-.opacityFilter.appears {
+.brightFilter {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+.opacity.appears {
   opacity: 1;
 }
 
-.fade-in {
-  opacity: 1;
+.fade {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+  -webkit-transition: -webkit-filter .6s ease-out;
+  transition: -webkit-filter .6s ease-out;
+  transition: filter .6s ease-out;
+  transition: filter .6s ease-out, -webkit-filter .6s ease-out;
 }
 
-.fade-out {
-  opacity: 0;
+.fade.appears {
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
 }
 
 @font-face {
@@ -476,7 +487,7 @@ body {
 }
 
 .content:nth-of-type(2) .background {
-  height: 202vh;
+  height: 200vh;
   -webkit-transition: opacity 1s ease-out, -webkit-transform .2s ease-out;
   transition: opacity 1s ease-out, -webkit-transform .2s ease-out;
   transition: transform .2s ease-out, opacity 1s ease-out;
@@ -579,8 +590,8 @@ body {
       flex-wrap: nowrap;
   z-index: 160;
   padding: 8em 0 8em;
-  -webkit-box-shadow: -100px -30px 80px var(--blackClr), 100px -30px 80px var(--blackClr), -200px -30px 80px var(--blackClr), 200px -30px 80px var(--blackClr);
-          box-shadow: -100px -30px 80px var(--blackClr), 100px -30px 80px var(--blackClr), -200px -30px 80px var(--blackClr), 200px -30px 80px var(--blackClr);
+  -webkit-box-shadow: -100px 30px 60px var(--blackClr), 100px 30px 60px var(--blackClr), -200px 30px 60px var(--blackClr), 200px 30px 60px var(--blackClr);
+          box-shadow: -100px 30px 60px var(--blackClr), 100px 30px 60px var(--blackClr), -200px 30px 60px var(--blackClr), 200px 30px 60px var(--blackClr);
 }
 
 .content:nth-of-type(3) .content__top {

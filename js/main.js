@@ -13,34 +13,68 @@ window.addEventListener('scroll', () => {
 
     // Scroll First Section Backgrounds
 
-    let bgFirstSection = contentSection[0].querySelector('.background');
+    let firstSectionBg = contentSection[0].querySelector('.background');
 
-    scrollElement(0, 0.03, 500, bgFirstSection.children[1], windowOffset);
-    scrollElement(0, -0.07, 500, bgFirstSection.children[2], windowOffset);
+    //scrollElement(0, 0.03, 500, bgFirstSection.children[1], windowOffset);
+    //scrollElement(0, -0.07, 500, firstSectionBg.children[2], windowOffset);
 
-    addClassOnScroll(bgFirstSection, 'brightFilter', 350);
+    transformOnScroll('translateY', windowOffset, 0.008,'%', translateElement2, firstSectionBg.children[1], 2.5);
+    transformOnScroll('translateY', windowOffset, -0.008,'%', translateElement, firstSectionBg.children[2], -5);
+
+    addClassOnScroll(firstSectionBg, 'brightFilter', 350);
 
     // Scroll First Section Content
 
-    scrollElement(0, -1, 500, contentSection[0].querySelector('.content__top'), windowOffset);
-    //scrollElement(0, -1, 500, contentSection[0].querySelector('.content__bottom'), windowOffset);
+    let firstSectionContent = contentSection[0].querySelector('.content__top');
+
+    transformOnScroll('translateY', windowOffset, -0.3,'%', translateElement, firstSectionContent, -50);
 
     // Scroll Background Second Section
 
     let sideRocksBg = contentSection[1].querySelector('.background');
 
-    scrollElementWithPercent(-0.16, sideRocksBg);
-
-    /*if (windowOffset >= 1100) {
-        contentSection[1].querySelector('.background').style.opacity = '0'
-        contentSection[2].querySelector('.background').style.opacity = '1';
-    }
-    else {
-        contentSection[1].querySelector('.background').style.opacity = '1'
-        contentSection[2].querySelector('.background').style.opacity = '0';
-    }*/
+    transformOnScroll('translateY', windowOffset, -0.16,'%', translateElement, sideRocksBg, -50);
 
 })
+
+function translateElement(transformation, affectedElement, displacement, maxValue) {
+
+    if (displacement >= maxValue) {
+        affectedElement.style.transform = transformation;
+        console.log('displacement: ' + displacement + ' maxValue: '+ maxValue);
+    }
+    else {
+        affectedElement.style.transform = 'translateY(' + maxValue + '%)';
+    }
+}
+
+function translateElement2(transformation, affectedElement, displacement, maxValue) {
+
+    if (displacement <= maxValue) {
+        affectedElement.style.transform = transformation;
+        console.log('displacement: ' + displacement + ' maxValue: '+ maxValue);
+    }
+}
+
+function scaleElement(transformation, affectedElement, displacement, maxValue) {
+    if (displacement <= maxValue) {
+        affectedElement.style.transform = transformation;
+    }
+
+    else {
+        affectedElement.style.transform = 'scale(1)';
+    }
+}
+
+function transformOnScroll(transformType, offsetObject, displaceVal, unit, condition, affectedElement, maxValue) {
+
+    let displacement = offsetObject * displaceVal;
+
+    let transformation = transformType + '('+ displacement + unit + ')';
+
+    condition(transformation, affectedElement, displacement, maxValue);
+
+}
 
 
 function scrollElement (scrollPercentX, scrollPercentY, offsetRange, elementDisplaced) {
@@ -64,54 +98,11 @@ function addClassOnScroll (element, classEl, offsetRange) {
     }
 }
 
-// Test Intersection Observer
-
-let observOptions2 = {
-    rootMargin: '4%'
-}
-
-var isIntersecting;
-
-const intersectElement = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            
-            isIntersecting = true;
-        }
-
-        else {
-           
-            isIntersecting = false;
-        }
-    })
-
-}, observOptions2);
-
-intersectElement.observe(contentSection[2]);
-
-function scrollElementWithPercent (scrollPercentX, elementDisplaced) {
-
-    let percentage = windowOffset * scrollPercentX;
-  
-    let translate = ['translateY(', percentage, '%)'].join('');
-    
-
-    if (percentage >= -50) {
-        elementDisplaced.style.transform = translate;
-    }
-    else {
-        elementDisplaced.style.transform = 'translateY(-50%)'
-    }
-
-}
 
 // Intersection Observer
 
-const sliders = document.querySelectorAll('.slide-in-left');
-const sliders2 = document.querySelectorAll('.slide-in-right');
-const faders = document.querySelectorAll('.brightFilter');
-const opacity = document.querySelectorAll('.opacityFilter');
+const opacity = document.querySelectorAll('.opacity');
+const fade = document.querySelectorAll('.fade');
 
 const observOptions = {
     threshold: .5
@@ -132,11 +123,7 @@ const appearOnScreen = new IntersectionObserver((entries) => {
 
 }, observOptions);
 
-sliders.forEach(element => {
-    appearOnScreen.observe(element);
-})
-
-faders.forEach(element => {
+fade.forEach(element => {
     appearOnScreen.observe(element);
 })
 

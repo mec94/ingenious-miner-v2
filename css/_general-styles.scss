@@ -50,19 +50,24 @@ body {
     background: rgba(255, 255, 255, .2);
 }
 
-.opacityFilter {
+.opacity {
     transition: opacity .5s ease-in-out;
     opacity: .1;
 }
 
-.opacityFilter.appears {
+.brightFilter {
+    filter: brightness(50%);
+}
+
+.opacity.appears {
     opacity: 1;
 }
 
-.fade-in {
-    opacity: 1;
+.fade {
+    filter: brightness(50%);
+    transition: filter .6s ease-out;
 }
 
-.fade-out {
-    opacity: 0;
+.fade.appears {
+    filter: brightness(100%)
 }

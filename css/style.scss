@@ -286,7 +286,7 @@
 
     .background {
 
-        height: 202vh;
+        height: 200vh;
         transition: transform .2s ease-out, opacity 1s ease-out;
 
         .caveBackground {
@@ -356,7 +356,7 @@
     z-index: 160;
     padding: 8em 0 8em;
 
-    box-shadow: -100px -30px 80px var(--blackClr), 100px -30px 80px var(--blackClr), -200px -30px 80px var(--blackClr), 200px -30px  80px var(--blackClr);
+    box-shadow: -100px 30px 60px var(--blackClr), 100px 30px 60px var(--blackClr), -200px 30px 60px var(--blackClr), 200px 30px 60px var(--blackClr);
 
     .content__top {
         
