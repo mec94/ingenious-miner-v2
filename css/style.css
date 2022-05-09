@@ -1038,6 +1038,12 @@ body {
   position: relative;
 }
 
+.content:nth-of-type(4) .content__right .selectedMiner video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 .content:nth-of-type(4) .content__right .selectedMiner__image {
   position: absolute;
   top: 0;
