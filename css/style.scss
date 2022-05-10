@@ -869,6 +869,10 @@
 
             &__back {
                 transform: rotateX(-90deg) translateZ(.5em);
+
+                h4 { 
+                    color: var(--brightYellowClr);
+                }
             }
 
             &__picture {

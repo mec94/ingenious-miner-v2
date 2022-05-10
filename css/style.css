@@ -1385,6 +1385,10 @@ body {
           transform: rotateX(-90deg) translateZ(0.5em);
 }
 
+.content:nth-of-type(5) .content__right .mineSelector__back h4 {
+  color: var(--brightYellowClr);
+}
+
 .content:nth-of-type(5) .content__right .mineSelector__picture {
   position: absolute;
   width: 5em;
