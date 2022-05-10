@@ -207,8 +207,8 @@ minerSelection.forEach((miner, index) => {
     miner.addEventListener('click', () => {
         minerDisplay.querySelector('.selectedMiner__image.show').classList.remove('show');
         minerDisplay.querySelectorAll('.selectedMiner__image')[index].classList.add('show');
-        minerDisplay.querySelector('h4').textContent = minerName[index];
-        minerDisplay.querySelector('p').textContent = minerInfo[index];
+        document.querySelector('.selectedMiner__info h4').textContent = minerName[index];
+        document.querySelector('.selectedMiner__info p').textContent = minerInfo[index];
 
         contentSection[3].querySelector('.minerChoice__picture.colored').classList.remove('colored');
         contentSection[3].querySelectorAll('.minerChoice__picture')[index].classList.add('colored');

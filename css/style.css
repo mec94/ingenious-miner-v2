@@ -10,6 +10,7 @@
   --brownClr: #40250f;
   --bigFont: 'RifficFree-Bold', sans-serif;
   --brightYellowClr: yellow;
+  --yellowClr2: #FBCA01;
   --lightYellowClr: rgba(236, 236, 50, 0.542);
   --orangeClr: rgb(241, 107, 18);
   --diamondPinkClr: rgb(183 103 205);
@@ -696,6 +697,7 @@ body {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  background-color: var(--blackClr);
 }
 
 .content:nth-of-type(4) .content__left {
@@ -706,40 +708,49 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   width: 50%;
-  height: 100%;
+  height: 80%;
 }
 
 .content:nth-of-type(4) .content__left .titleContainer h3 {
-  color: var(--whiteClr);
+  color: var(--yellowClr2);
   font-size: 3em;
+  letter-spacing: 1px;
+}
+
+.content:nth-of-type(4) .content__left .selectedMiner__info {
+  position: relative;
+  padding: 1em;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.content:nth-of-type(4) .content__left .selectedMiner__info .selectedMiner__title {
+  border-bottom: 1px solid var(--whiteClr);
+  color: var(--yellowClr2);
+  text-align: center;
+  padding-bottom: .5em;
+  font-size: 1.3em;
+}
+
+.content:nth-of-type(4) .content__left .selectedMiner__info p {
+  padding: .5em .8em;
+  color: var(--whiteClr);
+  font-family: 'RifficFree-Bold', sans-serif;
+  line-height: 1.4;
   letter-spacing: 1px;
 }
 
 .content:nth-of-type(4) .content__left .minerChoice {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
 }
 
 .content:nth-of-type(4) .content__left .minerChoice__minerTypes {
@@ -822,7 +833,7 @@ body {
   top: -15%;
   left: -15%;
   border-radius: 50%;
-  border: 3px outset var(--orangeClr);
+  border: 3px outset var(--yellowClr2);
   opacity: .5;
   -webkit-animation: rotateCircle 7s ease-in-out infinite;
           animation: rotateCircle 7s ease-in-out infinite;
@@ -912,14 +923,14 @@ body {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   width: 100%;
-  height: 1px;
+  height: 100%;
 }
 
 .content:nth-of-type(4) .content__left .minerChoice__selectionBar::before {
   position: absolute;
   content: '';
-  width: 120%;
-  left: -10%;
+  width: 110%;
+  left: -5%;
   height: 1px;
   background: var(--whiteClr);
   border-radius: 20px;
@@ -985,7 +996,7 @@ body {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  width: 30%;
+  width: 40%;
 }
 
 .content:nth-of-type(4) .content__right .playNowBtn {
@@ -1010,82 +1021,56 @@ body {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   height: 80vh;
+  width: 100%;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__picture {
-  height: 60%;
+  height: 100%;
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition: -webkit-transform .8s ease-out;
-  transition: -webkit-transform .8s ease-out;
-  transition: transform .8s ease-out;
-  transition: transform .8s ease-out, -webkit-transform .8s ease-out;
-  -webkit-transform-origin: bottom;
-          transform-origin: bottom;
+  opacity: 0;
+  -webkit-transition: opacity .8s ease-out;
+  transition: opacity .8s ease-out;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image.show {
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  opacity: 1;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:first-child {
   height: 160%;
-  top: -35%;
+  top: -30%;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:nth-child(2) {
   height: 160%;
-  top: -35%;
+  top: -30%;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:nth-child(3) {
   height: 160%;
-  top: -32%;
+  top: -28%;
   left: 10%;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:nth-child(4) {
   height: 160%;
-  top: -35%;
+  top: -30%;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:nth-child(5) {
-  height: 120%;
-  left: 15%;
-  top: -20%;
-}
-
-.content:nth-of-type(4) .content__right .selectedMiner__title {
-  border-bottom: 1px solid var(--whiteClr);
-  color: var(--whiteClr);
-  text-align: center;
-  padding-bottom: .5em;
-  font-size: 1.3em;
-}
-
-.content:nth-of-type(4) .content__right .selectedMiner__info {
-  position: relative;
-  padding: 1em;
-  border-radius: 10px;
-  z-index: 10;
-  overflow: hidden;
-}
-
-.content:nth-of-type(4) .content__right .selectedMiner__info p {
-  padding: .5em .8em;
-  color: var(--whiteClr);
-  font-family: 'RifficFree-Bold', sans-serif;
-  line-height: 1.4;
-  letter-spacing: 1px;
+  height: 90%;
+  left: 17%;
+  top: 6%;
 }
 
 .content:nth-of-type(5) {
@@ -1105,6 +1090,7 @@ body {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   padding: 1em 0 1em 1em;
+  background-color: var(--blackClr);
 }
 
 .content:nth-of-type(5) .content__left {

@@ -432,25 +432,49 @@
 .content:nth-of-type(4) {
     
     @include dispFlex(row, space-around, center, nowrap);
+    background-color: var(--blackClr);
 
     .content__left {
 
-        @include dispFlex(column, space-around, stretch, nowrap);
+        @include dispFlex(column, space-between, stretch, nowrap);
         width: 50%;
-        height: 100%;
+        height: 80%;
 
         .titleContainer {
 
             h3 {
-                color: var(--whiteClr);
+                color: var(--yellowClr2);
                 font-size: 3em;
+                letter-spacing: 1px;
+            }
+        }
+
+        .selectedMiner__info {
+
+            position: relative;
+            padding: 1em;
+            border-radius: 10px;
+            z-index: 10;
+
+            .selectedMiner__title {
+                border-bottom: 1px solid var(--whiteClr);
+                color: var(--yellowClr2);
+                text-align: center;
+                padding-bottom: .5em;
+                font-size: 1.3em;
+            }
+
+            p {
+                padding: .5em .8em;
+                color: var(--whiteClr);
+                font-family: 'RifficFree-Bold', sans-serif;
+                line-height: 1.4;
                 letter-spacing: 1px;
             }
         }
 
         .minerChoice {
             width: 100%;
-            @include dispFlex(column, flex-start, center, nowrap);
 
             &__minerTypes {
                 @include dispFlex(row, space-between, flex-end, nowrap);
@@ -497,7 +521,7 @@
                     top: -15%;
                     left: -15%;
                     border-radius: 50%;
-                    border: 3px outset var(--orangeClr);
+                    border: 3px outset var(--yellowClr2);
                     opacity: .5;
                     animation: rotateCircle 7s ease-in-out infinite;
                     transition: background .3s ease-out, border .5s ease-out;
@@ -545,13 +569,13 @@
                 position: relative;
                 @include dispFlex(row, space-between, flex-end, nowrap);
                 width: 100%;
-                height: 1px;
+                height: 100%;
 
                 &::before {
                     position: absolute;
                     content: '';
-                    width: 120%;
-                    left: -10%;
+                    width: 110%;
+                    left: -5%;
                     height: 1px;
                     background: var(--whiteClr);
                     border-radius: 20px;
@@ -610,7 +634,7 @@
     .content__right {
 
         @include dispFlex(column, center ,center ,nowrap);
-        width: 30%;
+        width: 40%;
 
         .playNowBtn {
             border: 1px solid var(--purpleClr);
@@ -621,76 +645,51 @@
 
             @include dispFlex(column, center, center, nowrap);
             height: 80vh;
+            width: 100%;
 
             &__picture {
-                height: 60%;
+                height: 100%;
                 width: 100%;
                 position: relative;
+                overflow: hidden;
             }
 
             &__image {
                 position: absolute;
                 top: 0;
                 left: 0;
-                transform: scale(0);
-                transition: transform .8s ease-out;
-                transform-origin: bottom;
+                opacity: 0;
+                transition: opacity .8s ease-out;
+                object-fit: contain;
 
                 &.show {
-                    transform: scale(1);
+                    opacity: 1;
                 }
 
                 &:first-child {
                     height: 160%;
-                    top: -35%;
+                    top: -30%;
                 }
     
                 &:nth-child(2) {
                     height: 160%;
-                    top: -35%;
+                    top: -30%;
                 }
                 
                 &:nth-child(3) {
                     height: 160%;
-                    top: -32%;
+                    top: -28%;
                     left: 10%;
                 }
 
                 &:nth-child(4) {
                     height: 160%;
-                    top: -35%;
+                    top: -30%;
                 }
                 &:nth-child(5) {
-                    height: 120%;
-                    left: 15%;
-                    top: -20%
-                }
-            }
-
-
-
-            &__title {
-                border-bottom: 1px solid var(--whiteClr);
-                color: var(--whiteClr);
-                text-align: center;
-                padding-bottom: .5em;
-                font-size: 1.3em;
-            }
-
-            &__info {
-
-                position: relative;
-                padding: 1em;
-                border-radius: 10px;
-                z-index: 10;
-                overflow: hidden;
-
-                p {
-                    padding: .5em .8em;
-                    color: var(--whiteClr);
-                    font-family: 'RifficFree-Bold', sans-serif;
-                    line-height: 1.4;
-                    letter-spacing: 1px;
+                    height: 90%;
+                    left: 17%;
+                    top: 6%
                 }
             }
         }
@@ -703,6 +702,7 @@
 
     @include dispFlex(row, flex-start, center, nowrap);
     padding: 1em 0 1em 1em;
+    background-color: var(--blackClr);
 
     .content__left {
 
