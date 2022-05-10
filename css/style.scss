@@ -916,7 +916,8 @@
 
 .content:nth-of-type(6) {
 
-    @include dispFlex(column, space-around, center, nowrap);
+    display: none;
+    //@include dispFlex(column, space-around, center, nowrap);
     background-color: var(--blackClr);
 
     .content__top {
