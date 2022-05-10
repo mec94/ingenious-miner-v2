@@ -309,7 +309,6 @@
             img:nth-child(2) {
                 z-index: 15;
                 opacity: .5;
-                animation: flipLight 4s linear infinite;
             }
     
             img:last-child {
@@ -319,28 +318,6 @@
 
         img:first-child {
             z-index: 5;
-        }
-
-        @keyframes flipLight {
-            0% {
-                opacity: .5
-            }
-            10% {
-                opacity: .2
-            }
-            14% {
-                opacity: .5
-            }
-            16% {
-                opacity: .2
-            }
-            19% {
-                opacity: .5
-            }
-
-            100% {
-                opacity: .5
-            }
         }
 
     }
@@ -384,17 +361,23 @@
             margin-bottom: 1em;
         }
 
-        button {
+        a {
+            border: 1px solid var(--whiteClr);
             margin-top: 2em;
-            border: 2px solid var(--whiteClr);
             border-radius: 10px;
-            padding: .2em 1em;
-            background: transparent;
+            padding: .4em 1em;
+            background: var(--blackOpacityClr);
             font-size: 1.7em;
             text-transform: uppercase;
             color: var(--whiteClr);
             font-family: var(--bigFont);
             letter-spacing: 1.6px;
+            transition: box-shadow .3s ease-out, background .3s ease-out;
+
+            &:hover {
+                background: var(--purpleOpacityClr);
+                box-shadow: 0 0 30px 10px var(--purpleOpacityClr);
+            }
         }
 
     }
@@ -470,14 +453,17 @@
             @include dispFlex(column, flex-start, center, nowrap);
 
             &__minerTypes {
-                @include dispFlex(row, space-between, center, nowrap);
-                width: 90%;
+                @include dispFlex(row, space-between, flex-end, nowrap);
+                width: 100%;
+                position: relative;
+                bottom: -.35em;
             }
 
             &__miner {
                 
-                @include dispFlex(column, flex-start, center, nowrap);
+                @include dispFlex(column, space-between, center, nowrap);
                 cursor: pointer;
+                width: 20%;
             }
 
             &__picture {
@@ -499,7 +485,7 @@
 
                 &.colored {
                     filter: grayscale(0%);
-                    transform: scale(1.1);
+                    transform: scale(1.05);
                 }
 
                 &::before {
@@ -508,8 +494,8 @@
                     content: '';
                     width: 120%;
                     height: 120%;
-                    top: -14%;
-                    left: -14%;
+                    top: -15%;
+                    left: -15%;
                     border-radius: 50%;
                     border: 3px outset var(--orangeClr);
                     opacity: .5;
@@ -556,10 +542,9 @@
             }
 
             &__selectionBar {
-                margin-top: 10%;
                 position: relative;
-                @include dispFlex(row, space-between, center, nowrap);
-                width: 80%;
+                @include dispFlex(row, space-between, flex-end, nowrap);
+                width: 100%;
                 height: 1px;
 
                 &::before {
@@ -576,7 +561,7 @@
 
                     position: absolute;
                     transition: transform .5s ease-out;
-                    transform: translateX(-30%);
+                    left: 8.5%;
 
                     &__roundedCircle {
                         position: absolute;
@@ -616,6 +601,7 @@
                 }
 
                 .smallCircle {
+                    margin-top: 4em;
                     position: relative;
                     width: .8em;
                     height: .8em;
@@ -713,19 +699,6 @@
                 z-index: 10;
                 overflow: hidden;
 
-                @keyframes rotateBorder {
-
-                    0% {
-                        transform: rotate(360deg);
-                    }
-                    50% {
-                        transform: rotate(180deg);
-                    }
-                    100% {
-                        transform: rotate(360deg);
-                    }
-                }
-
                 p {
                     padding: .5em .8em;
                     color: var(--whiteClr);
@@ -743,6 +716,7 @@
 .content:nth-of-type(5) {
 
     @include dispFlex(row, flex-start, center, nowrap);
+    padding: 1em 0 1em 1em;
 
     .content__left {
 
@@ -766,11 +740,25 @@
           
 
             &__title {
+                position: relative;
                 padding: .8em;
                 width: 100%;
                 background: var(--purpleOpacityClr);
                 text-align: center;
                 color: var(--whiteClr);
+            }
+
+            &__toggleAudio {
+                cursor: pointer;
+                position: absolute;
+                right: .1em;
+                top: 0;
+                background: none;
+                border: none;
+                width: 3.3em;
+                height: 3.3em;
+                z-index: 30;
+                filter: invert(100%);
             }
 
             &__picture {
@@ -812,7 +800,6 @@
             &__title {
                 color: var(--whiteClr);
                 font-size: 1.7em;
-                align-self: center;
             }
 
             &__selection {
@@ -844,20 +831,21 @@
     .content__right {
 
         width: 50%;
-        height: 50vh;
+        height: 70vh;
 
         @include dispFlex(row, flex-end, center, nowrap);
 
         .mineSelector {
 
-            @include dispFlex(column, space-between, center, nowrap);
-            width: 52%;
+            @include dispFlex(column, space-around, center, nowrap);
+            width: 50%;
             height: 100%;
 
             &__item {
                 position: relative;
-                @include dispFlex(row, flex-end, center, nowrap);
+                @include dispFlex(row, flex-end, flex-start, nowrap);
                 width: 100%;
+                height: 10%;
                 cursor: pointer;
             }
 
@@ -871,7 +859,7 @@
                 transform-style: preserve-3d;
 
                 & + * {
-                    margin-top: 7em;
+                    margin-top: 5em;
                 }
 
                 &.revealed {
@@ -922,6 +910,7 @@
                 color: var(--whiteClr);
                 border: 1px solid var(--whiteClr);
                 border-left: none;
+                border-right: none;
                 text-align: right;
                 font-size: 1.5em;
                 width: 100%;

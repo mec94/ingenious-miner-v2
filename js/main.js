@@ -121,16 +121,23 @@ const caveElements = contentSection[1].querySelector('.background').querySelecto
 
 const shakeCave = anime.timeline({
     loop: true,
-    endDelay: 3300
 })
 
 shakeCave.add({
-    targets: caveElements,
-    duration: 1000,
-    rotate: ['0deg', '1deg', '-1deg', '1deg', '-1deg', '1deg', '-1deg', '1deg', '0deg'],
-    translateX: [0, -3, 3, -3, 3, -3, 3, -3, 3, 0],
+    targets: caveElements[0],
+    duration: 900,
+    rotate: ['0deg', '.5deg', '-.5deg', '.5deg', '-.5deg', '.5deg', '-.5deg', '.5deg', '0deg'],
+    translateX: [0, -4, 4, -4, 4, -4, 4, -4, 4, 0],
     translateY: [0, 2, -2, 2, -2, 2, -2, 2, -2, 0],
     easing: 'linear'
+})
+
+shakeCave.add({
+    targets: caveElements[1],
+    duration: 900,
+    opacity: ['.2', '.5', '.2', '.5', '.5', '.5','.2', '.5'],
+    easing: 'linear',
+    endDelay: 3300
 })
 
 // Move Mines on Cursor Position
@@ -211,31 +218,31 @@ minerSelection.forEach((miner, index) => {
 
         function translateCircle(percentage) {
             let parentWidth = movingCircle.parentElement.offsetWidth;
-            let translateC = ['translateX(',percentage * parentWidth,'px)'].join('');
+            let translateC = 'translateX(' + percentage * parentWidth + 'px)';
             return movingCircle.style.transform = translateC;
         }
 
         switch(index) {
             case 0:
-                movingCircle.style.transform = translateCircle(-0.010);
+                movingCircle.style.transform = translateCircle(0);
                 break;
             case 1:
-                movingCircle.style.transform = translateCircle(0.234);
+                movingCircle.style.transform = translateCircle(0.2);
                 break;
             case 2:
-                movingCircle.style.transform = translateCircle(0.4775);
+                movingCircle.style.transform = translateCircle(0.4);
                 break;
             case 3:
-                movingCircle.style.transform = translateCircle(0.721);
+                movingCircle.style.transform = translateCircle(0.6);
                 break;
             case 4:
-                movingCircle.style.transform = translateCircle(0.966);
+                movingCircle.style.transform = translateCircle(0.8);
                 break;
         } 
 
         anime({
             targets: movingCircle.lastElementChild,
-            scaleY: '500%',
+            scaleY: '800%',
             duration: 300,
             delay: 400,
             easing: 'linear'
@@ -245,10 +252,19 @@ minerSelection.forEach((miner, index) => {
 
 // Mines Selector 
 
-minesSelector = contentSection[4].querySelectorAll('.mineSelector__item');
-mineTools = contentSection[4].querySelector('.miningTools__selection');
-selectedMine = contentSection[4].querySelector('.selectedMine');
+let minesSelector = contentSection[4].querySelectorAll('.mineSelector__item');
+let mineTools = contentSection[4].querySelector('.miningTools__selection');
+let selectedMine = contentSection[4].querySelector('.selectedMine');
 
+let audioToggle = selectedMine.querySelector('.selectedMine__toggleAudio').addEventListener('click', () => {
+
+    if (selectedMine.querySelector('video').muted == true) {
+        selectedMine.querySelector('video').muted = false;
+    }
+    else {
+        selectedMine.querySelector('video').muted = true;
+    }
+})
 
 let mineTitle =
     [
@@ -272,6 +288,7 @@ minesSelector.forEach((mineType, index) => {
 
         if (index == 0 || index == 1) {
             selectedMine.querySelector('h4').textContent = mineTitle[index];
+            selectedMine.querySelector('video').muted = false;
             selectedMine.querySelector('video source').src = `./img/${mineImage[index]}.mp4`;
         }
 
