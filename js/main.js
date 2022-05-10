@@ -89,7 +89,7 @@ const opacity = document.querySelectorAll('.opacity');
 const fade = document.querySelectorAll('.fade');
 
 const observOptions = {
-    threshold: .5
+    rootMargin: "-40%"
 }
 
 const appearOnScreen = new IntersectionObserver((entries) => {
@@ -253,10 +253,9 @@ minerSelection.forEach((miner, index) => {
 // Mines Selector 
 
 let minesSelector = contentSection[4].querySelectorAll('.mineSelector__item');
-let mineTools = contentSection[4].querySelector('.miningTools__selection');
 let selectedMine = contentSection[4].querySelector('.selectedMine');
 
-let audioToggle = selectedMine.querySelector('.selectedMine__toggleAudio').addEventListener('click', () => {
+/*let audioToggle = selectedMine.querySelector('.selectedMine__toggleAudio').addEventListener('click', () => {
 
     if (selectedMine.querySelector('video').muted == true) {
         selectedMine.querySelector('video').muted = false;
@@ -264,7 +263,7 @@ let audioToggle = selectedMine.querySelector('.selectedMine__toggleAudio').addEv
     else {
         selectedMine.querySelector('video').muted = true;
     }
-})
+})*/
 
 let mineTitle =
     [
@@ -286,15 +285,15 @@ minesSelector.forEach((mineType, index) => {
     mineType.addEventListener('click', () => {
         
 
-        if (index == 0 || index == 1) {
+        if (index == 0) {
             selectedMine.querySelector('h4').textContent = mineTitle[index];
             selectedMine.querySelector('video').muted = false;
-            selectedMine.querySelector('video source').src = `./img/${mineImage[index]}.mp4`;
+            selectedMine.querySelector('video').play();
+            //selectedMine.querySelector('video source').src = `./img/${mineImage[index]}.mp4`;
         }
-
-        (index == 0) ? mineTools.style.opacity = '1': mineTools.style.opacity = '0';
-
-        if (index != 0) mineType.querySelector('.mineSelector__flipFace').classList.toggle('revealed');
+        else {
+            mineType.querySelector('.mineSelector__flipFace').classList.toggle('revealed');
+        }
 
     })
 })

@@ -660,7 +660,7 @@
                 top: 0;
                 left: 0;
                 opacity: 0;
-                transition: opacity .8s ease-out;
+                transition: opacity .5s ease-out;
                 object-fit: contain;
 
                 &.show {
@@ -669,28 +669,31 @@
 
                 &:first-child {
                     height: 160%;
-                    top: -30%;
+                    top: -20%;
+                    left: 10%;
                 }
     
                 &:nth-child(2) {
                     height: 160%;
-                    top: -30%;
+                    top: -20%;
+                    left: 10%;
                 }
                 
                 &:nth-child(3) {
                     height: 160%;
-                    top: -28%;
-                    left: 10%;
+                    top: -20%;
+                    left: 18%;
                 }
 
                 &:nth-child(4) {
                     height: 160%;
-                    top: -30%;
+                    top: -20%;
+                    left: 10%;
                 }
                 &:nth-child(5) {
-                    height: 90%;
-                    left: 17%;
-                    top: 6%
+                    height: 75%;
+                    left: 24%;
+                    top: 25%
                 }
             }
         }
@@ -701,138 +704,37 @@
 
 .content:nth-of-type(5) {
 
-    @include dispFlex(row, flex-start, center, nowrap);
-    padding: 1em 0 1em 1em;
+    @include dispFlex(column, flex-start, center, nowrap);
+    padding: 1em 0 1em 3em;
     background-color: var(--blackClr);
 
-    .content__left {
-
-        @include dispFlex(column, space-around, center, nowrap);
-        width: 50%;
-        height: 80%;
+    .content__top {
+        width: 100%;
 
         .titleContainer {
-            color: var(--whiteClr);
-            font-size: 2em;
-        }
-
-        .selectedMine {
-
-            position: relative;
-            @include dispFlex(column, space-between, center, nowrap);
-            border: 1px solid var(--purpleClr);
-            margin: 1em 0;
-            width: 100%;
-            overflow: hidden;
-          
-
-            &__title {
-                position: relative;
-                padding: .8em;
-                width: 100%;
-                background: var(--purpleOpacityClr);
-                text-align: center;
-                color: var(--whiteClr);
-            }
-
-            &__toggleAudio {
-                cursor: pointer;
-                position: absolute;
-                right: .1em;
-                top: 0;
-                background: none;
-                border: none;
-                width: 3.3em;
-                height: 3.3em;
-                z-index: 30;
-                filter: invert(100%);
-            }
-
-            &__picture {
-                width: 100%;
-                height: 100%;
-                position: relative;
-
-                img {
-                    height: 100%;
-                }
-
-                video {
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
-            &__cta {
-                border: 1px solid var(--purpleClr);
-                margin-bottom: .7em;
-
-                a {
-                    display: block;
-                    padding: .5em 2em;
-                    font-size: 1.2em;
-                    color: var(--whiteClr);
-                    background: var(--blackOpacityClr);
-                }
-            }
-
-        }
-
-        .miningTools {
-
-            @include dispFlex(column, space-between, space-between, nowrap);
-            width: 100%;
-
-            &__title {
-                color: var(--whiteClr);
-                font-size: 1.7em;
-            }
-
-            &__selection {
-                margin-top: .8em;
-                @include dispFlex(row, space-evenly, center, nowrap);
-                opacity: 0;
-                transition: opacity .3s ease-out;
-            }
-
-            &__item {
-                position: relative;
-                width: 5em;
-                height: 5em;
-                padding: 1em;
-                border: 1px solid var(--whiteOpacityClr);
-                border-radius: 50%;
-                background: var(--purpleOpacityClr);
-
-                img {
-                    width: 30%;
-                    position: absolute;
-                    left: 34%;
-                }
-
-            }
+            color: var(--yellowClr2);
+            font-size: 3em;
+            letter-spacing: 1px;
         }
     }
 
-    .content__right {
+    .content__bottom {
 
-        width: 50%;
-        height: 70vh;
-
-        @include dispFlex(row, flex-end, center, nowrap);
+        @include dispFlex(row, space-between, center, nowrap);
+        width: 100%;
+        height: 80%;
 
         .mineSelector {
 
-            @include dispFlex(column, space-around, center, nowrap);
-            width: 50%;
-            height: 100%;
+            @include dispFlex(column, space-between, center, nowrap);
+            width: 30%;
+            height: 70%;
 
             &__item {
                 position: relative;
                 @include dispFlex(row, flex-end, flex-start, nowrap);
                 width: 100%;
-                height: 10%;
+                height: 3em;
                 cursor: pointer;
             }
 
@@ -899,17 +801,108 @@
 
                 padding: .3em .5em .3em 2em;
                 color: var(--whiteClr);
-                border: 1px solid var(--whiteClr);
+                //border: 1px solid var(--whiteOpacityClr);
                 border-left: none;
                 border-right: none;
                 text-align: right;
                 font-size: 1.5em;
                 width: 100%;
-                background: var(--blackClr);
-
+                //background: var(--yellowOpacityClr);
             }
         }
 
+        .selectedMine {
+
+            position: relative;
+            @include dispFlex(column, space-between, center, nowrap);
+            border: 1px solid var(--purpleClr);
+            width: 58%;
+            overflow: hidden;
+          
+
+            &__title {
+                position: relative;
+                padding: .8em;
+                width: 100%;
+                background: var(--purpleOpacityClr);
+                text-align: center;
+                color: var(--whiteClr);
+            }
+
+            &__toggleAudio {
+                cursor: pointer;
+                position: absolute;
+                right: .1em;
+                top: 0;
+                background: none;
+                border: none;
+                width: 3.3em;
+                height: 3.3em;
+                z-index: 30;
+                filter: invert(100%);
+            }
+
+            &__picture {
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+                background: var(--purpleOpacityClr);
+
+                video {
+                    position: relative;
+                    width: 100%;
+                }
+            }
+
+            &__cta {
+                border: 1px solid var(--purpleClr);
+                margin-bottom: .7em;
+
+                a {
+                    display: block;
+                    padding: .5em 2em;
+                    font-size: 1.2em;
+                    color: var(--whiteClr);
+                    background: var(--blackOpacityClr);
+                }
+            }
+
+        }
+
+        /*.miningTools {
+
+            @include dispFlex(column, space-between, space-between, nowrap);
+            width: 100%;
+
+            &__title {
+                color: var(--whiteClr);
+                font-size: 1.7em;
+            }
+
+            &__selection {
+                margin-top: .8em;
+                @include dispFlex(row, space-evenly, center, nowrap);
+                opacity: 0;
+                transition: opacity .3s ease-out;
+            }
+
+            &__item {
+                position: relative;
+                width: 5em;
+                height: 5em;
+                padding: 1em;
+                border: 1px solid var(--whiteOpacityClr);
+                border-radius: 50%;
+                background: var(--purpleOpacityClr);
+
+                img {
+                    width: 30%;
+                    position: absolute;
+                    left: 34%;
+                }
+
+            }
+        }*/
     }
 
 }
