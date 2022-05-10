@@ -997,6 +997,7 @@ body {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   width: 40%;
+  overflow: hidden;
 }
 
 .content:nth-of-type(4) .content__right .playNowBtn {
@@ -1020,7 +1021,7 @@ body {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  height: 80vh;
+  height: 90vh;
   width: 100%;
 }
 
@@ -1420,6 +1421,7 @@ body {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  background-color: var(--blackClr);
 }
 
 .content:nth-of-type(6) .content__top h3 {
@@ -1470,6 +1472,7 @@ body {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  background-color: var(--blackClr);
 }
 
 .content:nth-of-type(7) .content__top .titleContainer {

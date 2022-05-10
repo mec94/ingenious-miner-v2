@@ -635,6 +635,7 @@
 
         @include dispFlex(column, center ,center ,nowrap);
         width: 40%;
+        overflow: hidden;
 
         .playNowBtn {
             border: 1px solid var(--purpleClr);
@@ -644,7 +645,7 @@
         .selectedMiner {
 
             @include dispFlex(column, center, center, nowrap);
-            height: 80vh;
+            height: 90vh;
             width: 100%;
 
             &__picture {
@@ -916,6 +917,7 @@
 .content:nth-of-type(6) {
 
     @include dispFlex(column, space-around, center, nowrap);
+    background-color: var(--blackClr);
 
     .content__top {
 
@@ -948,6 +950,7 @@
 .content:nth-of-type(7) {
 
     @include dispFlex(column, space-around, center, nowrap);
+    background-color: var(--blackClr);
 
     .content__top {
 
