@@ -994,7 +994,7 @@
 
     .teamCategorySelBar {
         width: 100%;
-        height: 2em;
+        height: 5em;
         @include dispFlex(row, space-between, flex-end, nowrap);
 
         &::before {
@@ -1006,8 +1006,9 @@
         }
 
         &__item {
+            cursor: pointer;
             position: relative;
-            bottom: -18%;
+            bottom: -10%;
             @include dispFlex(column, flex-end, center, nowrap);
 
             h4 {

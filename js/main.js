@@ -335,6 +335,25 @@ const swiper = new Swiper('.swiper', {
     },
   });
 
-  //Team Section Category Selector
+//Team Section Category Selector
+let slide = document.querySelectorAll('.swiper-slide');
+let teamCategorySelector = document.querySelector('.teamCategorySelBar').querySelectorAll('.teamCategorySelBar__item');
 
-  
+teamCategorySelector.forEach((teamCategory, index )=> {
+    teamCategory.addEventListener('click', () => {
+        switch (index) {
+            case 0:
+                swiper.slideToLoop(0);
+            break;
+            case 1:
+                swiper.slideToLoop(3);
+            break;
+            case 2: 
+                swiper.slideToLoop(7);
+                //slide[15].style.opacity = '0';
+            break;
+            case 3:
+                swiper.slideToLoop(9);
+        }
+    })
+})
