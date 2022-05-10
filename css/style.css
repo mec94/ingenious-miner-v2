@@ -101,6 +101,25 @@ body {
           filter: brightness(100%);
 }
 
+.smallCircle {
+  margin-top: 4em;
+  position: relative;
+  width: .8em;
+  height: .8em;
+  border-radius: 50%;
+  background: var(--whiteClr);
+  z-index: 10;
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+}
+
+.smallCircle.selected {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
 @font-face {
   font-family: RifficFree-Bold;
   src: url("../fonts/RifficFree-Bold.ttf");
@@ -950,25 +969,6 @@ body {
           transform-origin: bottom;
 }
 
-.content:nth-of-type(4) .content__left .minerChoice__selectionBar .smallCircle {
-  margin-top: 4em;
-  position: relative;
-  width: .8em;
-  height: .8em;
-  border-radius: 50%;
-  background: var(--whiteClr);
-  z-index: 10;
-  -webkit-transition: -webkit-transform .3s ease-out;
-  transition: -webkit-transform .3s ease-out;
-  transition: transform .3s ease-out;
-  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
-}
-
-.content:nth-of-type(4) .content__left .minerChoice__selectionBar .smallCircle.selected {
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
-
 .content:nth-of-type(4) .content__right {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1519,5 +1519,61 @@ body {
   text-align: center;
   color: var(--yellowClr);
   font-weight: 700;
+}
+
+.content:nth-of-type(7) .teamCategorySelBar {
+  width: 100%;
+  height: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.content:nth-of-type(7) .teamCategorySelBar::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 1px;
+  background: var(--whiteClr);
+}
+
+.content:nth-of-type(7) .teamCategorySelBar__item {
+  position: relative;
+  bottom: -18%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.content:nth-of-type(7) .teamCategorySelBar__item h4 {
+  color: var(--whiteClr);
+}
+
+.content:nth-of-type(7) .teamCategorySelBar__item .smallCircle {
+  margin-top: 2.5em;
 }
 /*# sourceMappingURL=style.css.map */

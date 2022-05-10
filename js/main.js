@@ -334,3 +334,7 @@ const swiper = new Swiper('.swiper', {
       el: '.swiper-scrollbar',
     },
   });
+
+  //Team Section Category Selector
+
+  

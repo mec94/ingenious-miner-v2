@@ -71,3 +71,19 @@ body {
 .fade.appears {
     filter: brightness(100%)
 }
+
+.smallCircle {
+    margin-top: 4em;
+    position: relative;
+    width: .8em;
+    height: .8em;
+    border-radius: 50%;
+    background: var(--whiteClr);
+    z-index: 10;
+    transition: transform .3s ease-out;
+
+    &.selected {
+        transform: scale(0);
+    }
+
+}
