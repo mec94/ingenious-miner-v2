@@ -330,8 +330,8 @@ const swiper = new Swiper('.swiper', {
     speed: 1000,
     direction: 'horizontal',
     loop: true,
-    slidesPerView: 3,
-    spaceBetween: 80,
+    slidesPerView: 4,
+    spaceBetween: 30,
   
     // And if we need scrollbar
     scrollbar: {
@@ -345,15 +345,23 @@ let teamCategorySelector = document.querySelector('.teamCategorySelBar').querySe
 
 teamCategorySelector.forEach((teamCategory, index )=> {
     teamCategory.addEventListener('click', () => {
+
+        if (document.querySelector('.teamCategorySelBar__item.clicked')) {
+
+            document.querySelector('.teamCategorySelBar__item.clicked').classList.remove('clicked');
+        }
+
+        teamCategory.classList.add('clicked');
+
         switch (index) {
             case 0:
                 swiper.slideToLoop(0);
             break;
             case 1:
-                swiper.slideToLoop(3);
+                swiper.slideToLoop(4);
             break;
             case 2: 
-                swiper.slideToLoop(7);
+                swiper.slideToLoop(8);
                 //slide[15].style.opacity = '0';
             break;
             case 3:
