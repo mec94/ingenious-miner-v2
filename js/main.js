@@ -1,9 +1,4 @@
-
-/* eslint-disable */
-
-//document.documentElement.scrollTop = 0;
-
-let contentSection = document.querySelectorAll('.content');
+const contentSection = document.querySelectorAll('.content');
 
 var windowOffset;
 
@@ -127,7 +122,7 @@ shakeCave.add({
     targets: caveElements[0],
     duration: 900,
     rotate: ['0deg', '-.5deg', '.5deg', '-.5deg', '.5deg', '-.5deg', '.5deg', '-.5deg', '0deg'],
-    translateX: [0, 3, -3, 3, -3, 3, -3, 3, -3, 0],
+    translateX: [0, -3, 3, -3, 3, -3, 3, -3, 3, 0],
     translateY: [0, 2, -2, 2, -2, 2, -2, 2, -2, 0],
     easing: 'linear'
 })

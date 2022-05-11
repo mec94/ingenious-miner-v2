@@ -77,8 +77,6 @@
 }
 
 .content:first-of-type {
-    
-    overflow: hidden;
 
     .content__top {
         display: grid;
@@ -191,6 +189,7 @@
                 left: 10%;
                 width: 30%;
                 animation: moveCloud 60s infinite ease-out;
+                object-fit: contain;
             }
 
             &:nth-child(5) {
@@ -202,6 +201,7 @@
                 width: 30%;
                 z-index: 10;
                 animation: moveCloud 40s infinite ease-out;
+                object-fit: contain;
             }
 
             &:nth-child(6) {
@@ -298,15 +298,15 @@
 
         .caveBackground {
             position: absolute;
-            right: 4vw;
-            bottom: 34vh;
+            right: 3%;
+            bottom: 15%;
             width: 50vw;
             height: 50vh;
             z-index: 30;
 
             img {
-                object-fit: fill;
-                height: unset;
+                object-fit: contain;
+           
             }
 
             img:first-child {
@@ -656,8 +656,6 @@
         width: 40%;
         height: 80%;
 
-        border-bottom: 1px solid var(--whiteClr);
-
         .playNowBtn {
             border: 1px solid var(--purpleClr);
             padding: .5em 1em;
@@ -679,40 +677,40 @@
                 position: absolute;
                 opacity: 0;
                 transition: opacity .5s ease-out;
-                object-fit: contain;
+                object-fit: cover;
 
                 &.show {
                     opacity: 1;
                 }
 
                 &:first-child {
-                    height: 170%;
-                    bottom: -50.5%;
-                    left: 5%;
+                    height: 125%;
+                    bottom: -24.5%;
+                    left: 4%;
                 }
     
                 &:nth-child(2) {
-                    height: 82%;
-                    bottom: -8.5%;
-                    left: 24.5%;
+                    height: 90%;
+                    bottom: -9.5%;
+                    left: 21%;
                 }
                 
                 &:nth-child(3) {
-                    height: 170%;
-                    bottom: -51.5%;
+                    height: 133%;
+                    bottom: -29.8%;
                     left: 11.5%;
                 }
 
                 &:nth-child(4) {
-                    height: 170%;
-                    bottom: -50.5%;
-                    left: 5%;
+                    height: 125%;
+                    bottom: -24.5%;
+                    left: 4%;
                 }
 
                 &:nth-child(5) {
-                    height: 80%;
-                    left: 22%;
-                    bottom: -7.2%;
+                    height: 89%;
+                    left: 17.5%;
+                    bottom: -7.8%;
                 }
             }
         }
@@ -1069,15 +1067,14 @@
     .swiper-slide  {
 
         &-img {
-            border: 2px solid var(--diamondPinkClr);
+            border: 2px solid var(--lightPurpleClr);
             border-radius: 10px;
             background: linear-gradient(to top, var(--blackClr) 23%, var(--darkPurpleClr));
-            position: relative;
-            height: 11.5em;
+            overflow: hidden;
 
             img {
-                position: absolute;
-                bottom: 0;
+                position: relative;
+                bottom: -.3em;
             }
         }
 

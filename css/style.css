@@ -53,8 +53,8 @@ body {
 .background img {
   height: 100%;
   width: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: absolute;
 }
 
@@ -220,10 +220,6 @@ body {
   place-self: end center;
 }
 
-.content:first-of-type {
-  overflow: hidden;
-}
-
 .content:first-of-type .content__top {
   display: -ms-grid;
   display: grid;
@@ -359,6 +355,8 @@ body {
   width: 30%;
   -webkit-animation: moveCloud 60s infinite ease-out;
           animation: moveCloud 60s infinite ease-out;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .content:first-of-type .background img:nth-child(5) {
@@ -370,6 +368,8 @@ body {
   z-index: 10;
   -webkit-animation: moveCloud 40s infinite ease-out;
           animation: moveCloud 40s infinite ease-out;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .content:first-of-type .background img:nth-child(6) {
@@ -525,17 +525,16 @@ body {
 
 .content:nth-of-type(2) .background .caveBackground {
   position: absolute;
-  right: 4vw;
-  bottom: 34vh;
+  right: 3%;
+  bottom: 15%;
   width: 50vw;
   height: 50vh;
   z-index: 30;
 }
 
 .content:nth-of-type(2) .background .caveBackground img {
-  -o-object-fit: fill;
-     object-fit: fill;
-  height: unset;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .content:nth-of-type(2) .background .caveBackground img:first-child {
@@ -1018,7 +1017,6 @@ body {
       flex-wrap: nowrap;
   width: 40%;
   height: 80%;
-  border-bottom: 1px solid var(--whiteClr);
 }
 
 .content:nth-of-type(4) .content__right .playNowBtn {
@@ -1057,8 +1055,8 @@ body {
   opacity: 0;
   -webkit-transition: opacity .5s ease-out;
   transition: opacity .5s ease-out;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image.show {
@@ -1066,33 +1064,33 @@ body {
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:first-child {
-  height: 170%;
-  bottom: -50.5%;
-  left: 5%;
+  height: 125%;
+  bottom: -24.5%;
+  left: 4%;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:nth-child(2) {
-  height: 82%;
-  bottom: -8.5%;
-  left: 24.5%;
+  height: 90%;
+  bottom: -9.5%;
+  left: 21%;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:nth-child(3) {
-  height: 170%;
-  bottom: -51.5%;
+  height: 133%;
+  bottom: -29.8%;
   left: 11.5%;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:nth-child(4) {
-  height: 170%;
-  bottom: -50.5%;
-  left: 5%;
+  height: 125%;
+  bottom: -24.5%;
+  left: 4%;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:nth-child(5) {
-  height: 80%;
-  left: 22%;
-  bottom: -7.2%;
+  height: 89%;
+  left: 17.5%;
+  bottom: -7.8%;
 }
 
 .content:nth-of-type(5) {
@@ -1609,17 +1607,16 @@ body {
 }
 
 .content:nth-of-type(7) .swiper-slide-img {
-  border: 2px solid var(--diamondPinkClr);
+  border: 2px solid var(--lightPurpleClr);
   border-radius: 10px;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(23%, var(--blackClr)), to(var(--darkPurpleClr)));
   background: linear-gradient(to top, var(--blackClr) 23%, var(--darkPurpleClr));
-  position: relative;
-  height: 11.5em;
+  overflow: hidden;
 }
 
 .content:nth-of-type(7) .swiper-slide-img img {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  bottom: -.3em;
 }
 
 .content:nth-of-type(7) .swiper-slide h4 {
