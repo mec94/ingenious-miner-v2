@@ -1017,7 +1017,7 @@ body {
       flex-wrap: nowrap;
   width: 40%;
   height: 80%;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid var(--whiteClr);
 }
 
 .content:nth-of-type(4) .content__right .playNowBtn {
@@ -1066,32 +1066,32 @@ body {
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:first-child {
   height: 170%;
-  top: -20%;
+  bottom: -50.5%;
   left: 5%;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:nth-child(2) {
   height: 82%;
-  top: 26.20%;
+  bottom: -8.5%;
   left: 24.5%;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:nth-child(3) {
   height: 170%;
-  top: -18.5%;
+  bottom: -51.5%;
   left: 11.5%;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:nth-child(4) {
   height: 170%;
-  top: -20%;
+  bottom: -50.5%;
   left: 5%;
 }
 
 .content:nth-of-type(4) .content__right .selectedMiner__image:nth-child(5) {
-  height: 78%;
+  height: 80%;
   left: 22%;
-  top: 28.2%;
+  bottom: -7.2%;
 }
 
 .content:nth-of-type(5) {
