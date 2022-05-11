@@ -1020,7 +1020,7 @@
 
     .content__bottom {
 
-        height: 70%;
+        height: 85%;
         width: 100%;
 
         .customMiner {
@@ -1043,21 +1043,23 @@
     @include dispFlex(column, space-around, center, nowrap);
     background-color: var(--blackClr);
 
-    .content__top {
+    .titleContainer {
 
-        .titleContainer {
-
-            color: var(--whiteClr);
-            font-size: 3em;
-        }
+        color: var(--whiteClr);
+        font-size: 3em;
+        text-align: center
     }
 
     .content__bottom {
 
-        @include dispFlex(column, flex-start, center, nowrap);
-        height: 70%;
+        @include dispFlex(column, space-around, center, nowrap);
+        height: 80%;
         width: 60%;
 
+        .team {
+            @include dispFlex(column, space-between, center, nowrap);
+            width: 100%;
+        }
     }
 
     .swiper {
@@ -1069,7 +1071,7 @@
         &-img {
             border: 2px solid var(--diamondPinkClr);
             border-radius: 10px;
-            background: linear-gradient(to bottom, var(--lightPurpleClr), var(--purpleClr));
+            background: linear-gradient(to top, var(--blackClr) 23%, var(--darkPurpleClr));
             position: relative;
             height: 11.5em;
 
@@ -1099,14 +1101,13 @@
     }
 
     .teamCategorySelBar {
-        margin-top: 2%;
         width: 70%;
         @include dispFlex(row, space-between, flex-end, nowrap);
 
         &__item {
             position: relative;
             width: 22%;
-            height: 3em;
+            height: 4em;
             cursor: pointer;
 
             &::before {
@@ -1125,4 +1126,32 @@
         }
     }
 
+    .listedPartners {
+
+        margin-top: 5%;
+        @include dispFlex(row, space-around, center, wrap);
+
+        img {
+            width: 20%;
+        }
+
+        img:last-child {
+            width: 26%;
+        }
+    }
+
+}
+
+footer {
+    @include dispFlex(row, center, center, nowrap);
+    position: relative;
+    height: 5vh;
+    width: 100%;
+    background-color: var(--darkPurpleClr);
+    z-index: 100;
+
+    h4 {
+        color: var(--whiteClr);
+        letter-spacing: 1px;
+    }
 }

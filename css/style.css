@@ -8,6 +8,7 @@
   --blackOpacityClr: rgba(0,0,0,.3);
   --brownClr: #40250f;
   --bigFont: 'RifficFree-Bold', sans-serif;
+  --darkPurpleClr: #340066;
   --yellowClr: #FBCA01;
   --yellowOpacityClr: rgba(251, 202, 1, .2);
   --lightYellowClr: rgba(236, 236, 50, 0.542);
@@ -1514,7 +1515,7 @@ body {
 }
 
 .content:nth-of-type(6) .content__bottom {
-  height: 70%;
+  height: 85%;
   width: 100%;
 }
 
@@ -1559,9 +1560,10 @@ body {
   background-color: var(--blackClr);
 }
 
-.content:nth-of-type(7) .content__top .titleContainer {
+.content:nth-of-type(7) .titleContainer {
   color: var(--whiteClr);
   font-size: 3em;
+  text-align: center;
 }
 
 .content:nth-of-type(7) .content__bottom {
@@ -1572,16 +1574,34 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  height: 70%;
+  height: 80%;
   width: 60%;
+}
+
+.content:nth-of-type(7) .content__bottom .team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
 }
 
 .content:nth-of-type(7) .swiper {
@@ -1591,8 +1611,8 @@ body {
 .content:nth-of-type(7) .swiper-slide-img {
   border: 2px solid var(--diamondPinkClr);
   border-radius: 10px;
-  background: -webkit-gradient(linear, left top, left bottom, from(var(--lightPurpleClr)), to(var(--purpleClr)));
-  background: linear-gradient(to bottom, var(--lightPurpleClr), var(--purpleClr));
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(23%, var(--blackClr)), to(var(--darkPurpleClr)));
+  background: linear-gradient(to top, var(--blackClr) 23%, var(--darkPurpleClr));
   position: relative;
   height: 11.5em;
 }
@@ -1621,7 +1641,6 @@ body {
 }
 
 .content:nth-of-type(7) .teamCategorySelBar {
-  margin-top: 2%;
   width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1643,7 +1662,7 @@ body {
 .content:nth-of-type(7) .teamCategorySelBar__item {
   position: relative;
   width: 22%;
-  height: 3em;
+  height: 4em;
   cursor: pointer;
 }
 
@@ -1659,5 +1678,59 @@ body {
 
 .content:nth-of-type(7) .teamCategorySelBar__item.clicked::before {
   background: var(--diamondPinkClr);
+}
+
+.content:nth-of-type(7) .listedPartners {
+  margin-top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.content:nth-of-type(7) .listedPartners img {
+  width: 20%;
+}
+
+.content:nth-of-type(7) .listedPartners img:last-child {
+  width: 26%;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: relative;
+  height: 5vh;
+  width: 100%;
+  background-color: var(--darkPurpleClr);
+  z-index: 100;
+}
+
+footer h4 {
+  color: var(--whiteClr);
+  letter-spacing: 1px;
 }
 /*# sourceMappingURL=style.css.map */

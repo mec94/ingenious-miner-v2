@@ -358,14 +358,14 @@ teamCategorySelector.forEach((teamCategory, index )=> {
                 swiper.slideToLoop(0);
             break;
             case 1:
-                swiper.slideToLoop(4);
+                swiper.slideToLoop(3);
             break;
             case 2: 
-                swiper.slideToLoop(8);
+                swiper.slideToLoop(6);
                 //slide[15].style.opacity = '0';
             break;
             case 3:
-                swiper.slideToLoop(9);
+                swiper.slideToLoop(8);
         }
     })
 })
