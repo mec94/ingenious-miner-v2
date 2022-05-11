@@ -24,7 +24,7 @@ window.addEventListener('scroll', () => {
 
     let firstSectionContent = contentSection[0].querySelector('.content__top');
 
-    transformOnScroll('translateY', windowOffset, -0.5,'%', translateElement, firstSectionContent, -50);
+    transformOnScroll('translateY', windowOffset, -0.4,'%', translateElement, firstSectionContent, -100);
 
     // Scroll Background Second Section
 
@@ -126,8 +126,8 @@ const shakeCave = anime.timeline({
 shakeCave.add({
     targets: caveElements[0],
     duration: 900,
-    rotate: ['0deg', '.5deg', '-.5deg', '.5deg', '-.5deg', '.5deg', '-.5deg', '.5deg', '0deg'],
-    translateX: [0, -4, 4, -4, 4, -4, 4, -4, 4, 0],
+    rotate: ['0deg', '-.5deg', '.5deg', '-.5deg', '.5deg', '-.5deg', '.5deg', '-.5deg', '0deg'],
+    translateX: [0, 3, -3, 3, -3, 3, -3, 3, -3, 0],
     translateY: [0, 2, -2, 2, -2, 2, -2, 2, -2, 0],
     easing: 'linear'
 })
@@ -207,8 +207,10 @@ minerSelection.forEach((miner, index) => {
     miner.addEventListener('click', () => {
         minerDisplay.querySelector('.selectedMiner__image.show').classList.remove('show');
         minerDisplay.querySelectorAll('.selectedMiner__image')[index].classList.add('show');
-        document.querySelector('.selectedMiner__info h4').textContent = minerName[index];
-        document.querySelector('.selectedMiner__info p').textContent = minerInfo[index];
+        contentSection[3].querySelector('.minerChoice__additionalInfo.active').classList.remove('active');
+        minerSelection[index].firstElementChild.classList.add('active');
+        contentSection[3].querySelector('.selectedMiner__info h4').textContent = minerName[index];
+        contentSection[3].querySelector('.selectedMiner__info p').textContent = minerInfo[index];
 
         contentSection[3].querySelector('.minerChoice__picture.colored').classList.remove('colored');
         contentSection[3].querySelectorAll('.minerChoice__picture')[index].classList.add('colored');
@@ -255,15 +257,18 @@ minerSelection.forEach((miner, index) => {
 let minesSelector = contentSection[4].querySelectorAll('.mineSelector__item');
 let selectedMine = contentSection[4].querySelector('.selectedMine');
 
-/*let audioToggle = selectedMine.querySelector('.selectedMine__toggleAudio').addEventListener('click', () => {
+selectedMine.querySelector('.selectedMine__picture .playButton').addEventListener('click', (event) => {
 
-    if (selectedMine.querySelector('video').muted == true) {
-        selectedMine.querySelector('video').muted = false;
+    if (selectedMine.querySelector('video').paused == true) {
+
+        event.target.parentElement.classList.add('clicked');
+        selectedMine.querySelector('video').play();
     }
     else {
-        selectedMine.querySelector('video').muted = true;
+        event.target.parentElement.classList.remove('clicked');
+        selectedMine.querySelector('video').pause();
     }
-})*/
+})
 
 let mineTitle =
     [
@@ -286,9 +291,9 @@ minesSelector.forEach((mineType, index) => {
         
 
         if (index == 0) {
-            selectedMine.querySelector('h4').textContent = mineTitle[index];
             selectedMine.querySelector('video').muted = false;
             selectedMine.querySelector('video').play();
+            selectedMine.querySelector('.selectedMine__picture .playButton').classList.add('clicked');
             //selectedMine.querySelector('video source').src = `./img/${mineImage[index]}.mp4`;
         }
         else {
