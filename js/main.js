@@ -19,13 +19,13 @@ window.addEventListener('scroll', () => {
 
     let firstSectionContent = contentSection[0].querySelector('.content__top');
 
-    transformOnScroll('translateY', windowOffset, -0.4,'%', translateElement, firstSectionContent, -100);
+    if (window.innerWidth > 900) transformOnScroll('translateY', windowOffset, -0.4,'%', translateElement, firstSectionContent, -100);
 
     // Scroll Background Second Section
 
     let sideRocksBg = contentSection[1].querySelector('.background');
 
-    transformOnScroll('translateY', windowOffset, -0.16,'%', translateElement, sideRocksBg, -50);
+    if (window.innerWidth > 900) transformOnScroll('translateY', windowOffset, -0.16,'%', translateElement, sideRocksBg, -50);
 
 })
 
@@ -46,7 +46,7 @@ function translateElement2(transformation, affectedElement, displacement, maxVal
     }
 }
 
-function scaleElement(transformation, affectedElement, displacement, maxValue) {
+/*function scaleElement(transformation, affectedElement, displacement, maxValue) {
     if (displacement <= maxValue) {
         affectedElement.style.transform = transformation;
     }
@@ -54,7 +54,7 @@ function scaleElement(transformation, affectedElement, displacement, maxValue) {
     else {
         affectedElement.style.transform = 'scale(1)';
     }
-}
+}*/
 
 function transformOnScroll(transformType, offsetObject, displaceVal, unit, condition, affectedElement, maxValue) {
 
@@ -84,7 +84,7 @@ const opacity = document.querySelectorAll('.opacity');
 const fade = document.querySelectorAll('.fade');
 
 const observOptions = {
-    rootMargin: "-40%"
+    rootMargin: '-40%'
 }
 
 const appearOnScreen = new IntersectionObserver((entries) => {
@@ -191,11 +191,11 @@ let minerName = ['Mercenario', 'Pionero', 'Principiante', 'Experto', 'Empresario
 let minerPicture = ['expertMinerAnimated', 'amateurMinerAnimated', 'amateurMinerAnimated', 'expertMinerAnimated', 'businessmanMinerAnimated'];
 let minerInfo = 
     [
-        'Lorem ipsum mercenario amet consectetur adipisicing elit. Aspernatur voluptas eaque exercitationem excepturi.',
-        'Lorem ipsum pionero sit amet consectetur adipisicing elit. Aspernatur voluptas eaque exercitationem excepturi.',
-        'Lorem ipsum principiante sit amet consectetur adipisicing elit. Aspernatur voluptas eaque exercitationem excepturi.',
-        'Lorem ipsum experto sit amet consectetur adipisicing elit. Aspernatur voluptas eaque exercitationem excepturi.',
-        'Lorem ipsum empresario sit amet consectetur adipisicing elit. Aspernatur voluptas eaque exercitationem excepturi.',
+        '“Tu dame los créditos y luego hare lo que digas” <br> Este minero no es muy amigable pero puede servirte por un rato, puedes alquilarlo en el mercado negro por 7 días y tendrá un costo de 70 CM.',
+        '“Salve Sam el primero de nosotros.” <br> Los pioneros fueron los primeros en llegar a Minéria, y no están disponibles a la venta, los poseedores de estos podrán, jugar partidas y obtener Medallas de Honor Minero para poder ascenderlo a Minero Principiante.',
+        '“Perdón ¿Tu sabrías decirme donde tengo que picar?” <br> El minero Principiante es un NFT que te permite jugar el juego de por vida, además que con su compra obtendrás 500 CM de regalo si lo compras por 2000 CM en la sección de ofertas en el juego, también puedes comprarlo a otro usuario en el Mercado Negro, pero recuerda que esos vendrán sin CM.',
+        '“Oye tu, deja de actuar como un Turister, y pica que necesitamos mas carbón” <br> El NFT Experto es uno de los mas valorados, por su posibilidad de dar becas y aumentar ese numero con Medallas de Honor, puede ser obtenido en el Mercado Negro, **o en ofertas a 8000 CM y viene con 2000 CM de regalo, y 3 espacios de becas disponibles.',
+        '”¡Vamos pongan las dinamitas por ahí, quiero todos esos Diamantes!” <br> El Avaro del continente quiere todo para el, pero si no tienes NFT puedes aprovecharlos para jugar en sus becas ya que cuentan con 10 espacios para becas, valen 22000 CM y vienen con 5500 CM** de regalos. Los puedes comprar en la sección de ofertas, no creemos que encuentres en el Mercado Negro, pero prueba suerte.',
     ]
 
 minerSelection.forEach((miner, index) => {
@@ -205,7 +205,7 @@ minerSelection.forEach((miner, index) => {
         contentSection[3].querySelector('.minerChoice__additionalInfo.active').classList.remove('active');
         minerSelection[index].firstElementChild.classList.add('active');
         contentSection[3].querySelector('.selectedMiner__info h4').textContent = minerName[index];
-        contentSection[3].querySelector('.selectedMiner__info p').textContent = minerInfo[index];
+        contentSection[3].querySelector('.selectedMiner__info p').innerHTML = minerInfo[index];
 
         contentSection[3].querySelector('.minerChoice__picture.colored').classList.remove('colored');
         contentSection[3].querySelectorAll('.minerChoice__picture')[index].classList.add('colored');
@@ -273,10 +273,10 @@ let mineTitle =
         'Mina Cielo Abierto'
     ]
 
-let mineImage =
+let mineContent =
     [
         'gameplayVideoUndergroundMine',
-        'subacuaticMine',
+        'gameplayVideoUnderwaterMine',
         'desertMine',
         'openPitMine',
     ]
@@ -285,11 +285,12 @@ minesSelector.forEach((mineType, index) => {
     mineType.addEventListener('click', () => {
         
 
-        if (index == 0) {
-            selectedMine.querySelector('video').muted = false;
-            selectedMine.querySelector('video').play();
+        if (index == 0 || index == 1) {
             selectedMine.querySelector('.selectedMine__picture .playButton').classList.add('clicked');
-            //selectedMine.querySelector('video source').src = `./img/${mineImage[index]}.mp4`;
+            selectedMine.querySelector('video source').src = `./img/${mineContent[index]}.mp4`;
+            selectedMine.querySelector('video').muted = false;
+            selectedMine.querySelector('video').load();
+            selectedMine.querySelector('video').play();
         }
         else {
             mineType.querySelector('.mineSelector__flipFace').classList.toggle('revealed');
@@ -325,8 +326,14 @@ const swiper = new Swiper('.swiper', {
     speed: 1000,
     direction: 'horizontal',
     loop: true,
-    slidesPerView: 4,
-    spaceBetween: 30,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    breakpoints: {
+        900: {
+            slidesPerView: 4,
+            spaceBetween: 30
+        },
+    },
   
     // And if we need scrollbar
     scrollbar: {

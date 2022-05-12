@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/swiper-bundle.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
     <meta name="description" content="Ingenious Miner es un juego NFT con economía estable">
     <title>Ingenious Miner</title>
 </head>
@@ -96,7 +113,7 @@
         </div>
     </section>
 
-    <section class="content" id="minesWelcome">
+    <section class="content fade" id="minesWelcome">
         <div class="content__top">
             <h4>
                 Bienvenido a las minas
@@ -109,9 +126,9 @@
                 Asperiores dolorem maxime quod quo quaerat soluta rem nobis est, ipsa expedita blanditiis quidem nostrum, eaque, sunt minima ratione eveniet.
                 Aliquid, ratione.
             </p>-->
-            <a href="#minerSelection">Juga ahora</a>
+            <a href="#minerSelection">Comenzá</a>
         </div>
-        <div class="background fade">
+        <div class="background">
             <img class="bg-animate" src="./img/fondoVias_1.png" alt="">
             <img class="bg-animate" src="./img/fondoVias_2.png" alt="">
             <img class="bg-animate" src="./img/fondoVias_3.png" alt="">
@@ -140,7 +157,7 @@
                                 </h4>
                             </div>
                             <div class="minerChoice__picture colored">
-                                <img src="./img/unknownMinerCircle.png" alt="">
+                                <img src="./img/mercenaryMinerCircle.png" alt="">
                             </div>
                             <span class="smallCircle selected"></span>
                         </div>
@@ -202,18 +219,19 @@
 
             <div class="selectedMiner__info glassmorphism">
                 <h4 class="selectedMiner__title">
-                    Minero Experto
+                    Minero Mercenario
                 </h4>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Aspernatur voluptas eaque exercitationem excepturi.
+                    “Tu dame los créditos y luego hare lo que digas”</br>
+
+                    Este minero no es muy amigable pero puede servirte por un rato, puedes alquilarlo en el mercado negro por 7 días y tendrá un costo de 70 CM.
                 </p>
             </div>
         </div>
         <div class="content__right">
             <div class="selectedMiner">
                 <div class="selectedMiner__picture">
-                    <img class="selectedMiner__image show" src="./img/expertMinerAnimated.webp" alt="">
+                    <img class="selectedMiner__image show" src="./img/mercenaryMiner.webp" alt="">
                     <img class="selectedMiner__image" src="./img/pioneerMiner.webp" alt="">
                     <img class="selectedMiner__image" src="./img/amateurMinerAnimated.webp" alt="">
                     <img class="selectedMiner__image" src="./img/expertMinerAnimated.webp" alt="">
@@ -224,7 +242,7 @@
         </div>
 
         <div class="background">
-            <img src="./img/fondoTierra1.png" alt="">
+            <img src="./img/fondoRocas.png" alt="">
         </div>
     </section>
 
@@ -327,9 +345,9 @@
                 </div>
             </div>
 
-            <div class="background">
-                <img src="./img/fondoTierra2.png" alt="">
-            </div>
+            <!--<div class="background">
+                <img src="./img/fondoRocas.png" alt="">
+            </div>-->
 
     </section>
 
@@ -345,9 +363,9 @@
             </div>
         </div>
 
-        <div class="background">
+        <!--<div class="background">
             <img src="./img/fondoTierra1.png" alt="">
-        </div>
+        </div>-->
     </section>
 
     <section class="content">
@@ -427,6 +445,13 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="swiper-slide-img">
+                            <img src="./img/team/crewpic-13.png" />
+                        </div>
+                        <h4>Diego González</h4>
+                        <p>Administración de Discord</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-img">
                             <img src="./img/team/crewpic-10.png" />
                         </div>
                         <h4>Lucas Romano</h4>
@@ -468,9 +493,15 @@
             </div>
 
             <div class="listedPartners">
-                <img src="./img/partners/criptohouse.png" />
-                <img src="./img/partners/criptominando.png" />
-                <img src="./img/partners/criptospot.png" />
+                <div class="listedPartners__logo">
+                    <img src="./img/partners/criptominando.svg" />
+                </div>
+                <div class="listedPartners__logo">
+                    <img src="./img/partners/criptospot.svg" />
+                </div>
+                <div class="listedPartners__logo">
+                    <img src="./img/partners/cryptohouse.svg" />
+                </div>
             </div>
             
             </div>

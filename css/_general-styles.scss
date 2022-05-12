@@ -65,7 +65,7 @@ body {
 
 .fade {
     filter: brightness(40%);
-    transition: filter .6s ease-out;
+    transition: filter .5s ease-out;
 }
 
 .fade.appears {
@@ -84,6 +84,10 @@ body {
 
     &.selected {
         transform: scale(0);
+    }
+
+    @include for-phone {
+        display: none;
     }
 
 }

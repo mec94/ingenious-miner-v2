@@ -25,22 +25,37 @@
     &__minerPicContainer img {
         height: 100%;
         object-fit: cover;
+
+        @include for-phone {
+            object-fit: contain;
+        }
     }
 
     &__minerPicContainer {
         height: 100%;
         position: relative;
         top: 25%;
+
+        @include for-phone {
+            top: 0;
+        }
     }
 
     &__minerPicContainer--first {
         grid-area: miner1;
         place-self: end start;
+
+        @include for-phone {
+            display: none;
+        }
     }
 
     &__minerPicContainer--second {
         grid-area: miner2;
         place-self: end center;
+        @include for-phone {
+            display: none;
+        }
     }
 
     &__cta {
@@ -60,6 +75,10 @@
     &__ctaLink:first-child {
         font-size: 2.4em;
         padding: .3em 1em;
+
+        @include for-phone {
+            font-size: 1.7em;
+        }
     }
 
     &__ctaLink:last-child {
@@ -72,6 +91,8 @@
     .socialMedia {
         grid-area: socialmedia;
         place-self: end center;
+
+
     }
 
 }
@@ -89,6 +110,14 @@
         height: 100%;
         width: 100%;
         transition: opacity .5s ease-out, transform .2s ease-out;
+
+        @include for-phone {
+            grid-template-rows: min-content 1fr min-content;
+            grid-template-areas:
+            "logo logo logo"
+            ". cta ."
+            "socialmedia socialmedia socialmedia";
+        }
     }
 
     
@@ -100,12 +129,16 @@
             color: var(--whiteClr);
             text-align: center;
             letter-spacing: 1px;
+
+            @include for-phone {
+                font-size: 1.1em;
+            }
         }
         
         &__iconsContainer {
             
             margin: .8em 0 .3em;
-            @include dispFlex(row, space-around, center, nowrap);
+            @include dispFlex(row, space-around, center, wrap);
             padding: 0 5%;
             
             img {
@@ -190,6 +223,11 @@
                 width: 30%;
                 animation: moveCloud 60s infinite ease-out;
                 object-fit: contain;
+
+                @include for-phone {
+                    animation: none;
+                    display: none;
+                }
             }
 
             &:nth-child(5) {
@@ -202,6 +240,11 @@
                 z-index: 10;
                 animation: moveCloud 40s infinite ease-out;
                 object-fit: contain;
+
+                @include for-phone {
+                    animation: none;
+                    display: none;
+                }
             }
 
             &:nth-child(6) {
@@ -266,6 +309,10 @@
     .content__top {
         position: relative;
         bottom: 40%;
+
+        @include for-phone {
+            bottom: unset;
+        }
     }
 
     .seasonTitle {
@@ -278,6 +325,10 @@
         text-align: center;
         z-index: 30;
 
+        @include for-phone {
+            padding: 1.2em .8em;
+        }
+
         h3 {
             color: var(--whiteClr);
             font-size: 2.5em;
@@ -286,6 +337,10 @@
             span {
                 position: relative;
                 display: inline-block;
+            }
+
+            @include for-phone {
+                font-size: 1.3em;
             }
         }
 
@@ -296,6 +351,12 @@
         height: 200vh;
         transition: transform .2s ease-out, opacity 1s ease-out;
 
+        @include for-phone {
+            top: unset;
+            bottom: 0;
+            height: 100vh;
+        }
+
         .caveBackground {
             position: absolute;
             right: 3%;
@@ -303,6 +364,10 @@
             width: 50vw;
             height: 50vh;
             z-index: 30;
+
+            @include for-phone {
+                display: none;
+            }
 
             img {
                 object-fit: contain;
@@ -342,6 +407,11 @@
 
     box-shadow: -100px 30px 60px var(--blackClr), 100px 30px 60px var(--blackClr), -200px 30px 60px var(--blackClr), 200px 30px 60px var(--blackClr);
 
+    @include for-phone {
+        padding: 0;
+        box-shadow: -100px 10px 30px var(--blackClr), 100px 10px 30px var(--blackClr), -200px 10px 30px var(--blackClr), 200px 10px 30px var(--blackClr);
+    }
+
     .content__top {
         
         z-index: 20;
@@ -350,10 +420,18 @@
         width: 40%;
         @include dispFlex(column, flex-start, center, nowrap);
 
+        @include for-phone {
+            width: 65%;
+        }
+
         h4 {
             font-size: 1.8em;
             color: var(--whiteClr);
             text-align: center;
+
+            @include for-phone {
+                font-size: 1.3em;
+            }
         }
 
         h3 {
@@ -362,6 +440,10 @@
             line-height: 1.1;
             color: var(--whiteClr);
             text-align: center;
+
+            @include for-phone {
+                font-size: 1.8em;
+            }
         }
 
         p {
@@ -443,7 +525,7 @@
     
     @include dispFlex(row, space-around, center, nowrap);
     background-color: var(--blackClr);
-    overflow: hidden;
+    position: relative;
 
     .content__left {
 
@@ -451,12 +533,22 @@
         width: 50%;
         height: 80%;
 
+        @include for-phone {
+            width: 100%;
+            height: 100%;
+        }
+
         .titleContainer {
 
             h3 {
                 color: var(--yellowClr);
                 font-size: 3em;
                 letter-spacing: 1px;
+
+                @include for-phone {
+                    font-size: 2em;
+                    text-align: center;
+                }
             }
         }
 
@@ -466,7 +558,15 @@
             padding: 1em;
             border-radius: 10px;
             z-index: 10;
-            width: 70%;
+            width: 90%;
+            height: 30%;
+            overflow: hidden;
+
+            @include for-phone {
+                width: 100%;
+                height: unset;
+                padding: .5em;
+            }
 
             .selectedMiner__title {
                 border-bottom: 1px solid var(--whiteClr);
@@ -474,6 +574,10 @@
                 text-align: center;
                 padding-bottom: .5em;
                 font-size: 1.3em;
+
+                @include for-phone {
+                    font-size: 1em;
+                }
             }
 
             p {
@@ -482,6 +586,12 @@
                 font-family: 'RifficFree-Bold', sans-serif;
                 line-height: 1.4;
                 letter-spacing: 1px;
+                font-size: .9em;
+
+                @include for-phone {
+                    padding: .5em .2em;
+                    font-size: .7em;
+                }
             }
         }
 
@@ -493,6 +603,10 @@
                 width: 100%;
                 position: relative;
                 bottom: -.35em;
+
+                @include for-phone {
+                    @include dispFlex(column, space-around, flex-start, nowrap);
+                }
             }
 
             &__miner {
@@ -500,6 +614,12 @@
                 @include dispFlex(column, space-between, center, nowrap);
                 cursor: pointer;
                 width: 20%;
+
+                @include for-phone {
+                    @include dispFlex(column-reverse, space-between, center, nowrap);
+                    width: 40%;
+                    margin-bottom: 1em;
+                }
             }
 
             &__picture {
@@ -513,6 +633,11 @@
                 filter: grayscale(100%);
                 transition: filter .3s ease-out, transform .3s ease-out;
                 z-index: 10;
+
+                @include for-phone {
+                    height: 2em;
+                    width: 2em;
+                }
 
                 &:hover {
                     filter: grayscale(0%);
@@ -568,6 +693,11 @@
                 width: 100%;
                 color: var(--whiteClr);
 
+                @include for-phone {
+                    margin-bottom: 0;
+                    margin-top: 1em;
+                }
+
                 h4 {
                     transition: color .4s ease-out;
                     text-align: center;
@@ -598,6 +728,10 @@
                     height: 1px;
                     background: var(--whiteClr);
                     border-radius: 20px;
+
+                    @include for-phone {
+                        display: none;
+                    }
                 }
 
                 .movingCircle {
@@ -605,6 +739,10 @@
                     position: absolute;
                     transition: transform .5s ease-out;
                     left: 8.5%;
+
+                    @include for-phone {
+                        display: none;
+                    }
 
                     &__roundedCircle {
                         position: absolute;
@@ -656,6 +794,14 @@
         width: 40%;
         height: 80%;
 
+        @include for-phone {
+            position: absolute;
+            right: -6%;
+            top: 10%;
+            width: 80%;
+            height: 50%;
+        }
+
         .playNowBtn {
             border: 1px solid var(--purpleClr);
             padding: .5em 1em;
@@ -684,15 +830,15 @@
                 }
 
                 &:first-child {
-                    height: 125%;
-                    bottom: -24.5%;
-                    left: 4%;
+                    height: 68%;
+                    bottom: 0;
+                    left: 34%;
                 }
     
                 &:nth-child(2) {
-                    height: 90%;
-                    bottom: -9.5%;
-                    left: 21%;
+                    height: 108%;
+                    bottom: -18.5%;
+                    left: 10.5%;
                 }
                 
                 &:nth-child(3) {
@@ -717,22 +863,33 @@
 
     }
 
+    .background {
+        height: 200vh;
+    }
+
 }
 
 .content:nth-of-type(5) {
 
     @include dispFlex(column, flex-start, center, nowrap);
     padding: 1em 0 1em 3em;
-    background-color: var(--blackClr);
+
+    @include for-phone {
+        padding: 1em;
+    }
 
     .content__top {
         align-self: flex-start;
-        width: 58%;
 
         .titleContainer {
             color: var(--yellowClr);
             font-size: 3em;
             letter-spacing: 1px;
+
+            @include for-phone {
+                font-size: 1.8em;
+                margin-bottom: 1em
+            }
         }
     }
 
@@ -743,11 +900,21 @@
         height: 80%;
         overflow-x: hidden;
 
+        @include for-phone {
+            @include dispFlex(column, space-between, center, nowrap);
+        }
+
         .mineSelector {
 
             @include dispFlex(column, space-between, center, nowrap);
             width: 30%;
             height: 70%;
+
+            @include for-phone {
+                width: 90%;
+                height: unset;
+                @include dispFlex(row, space-between, center, wrap);
+            }
 
             &__item {
                 position: relative;
@@ -755,6 +922,15 @@
                 width: 100%;
                 height: 3em;
                 cursor: pointer;
+
+                @include for-phone {
+                    width: unset;
+                    height: unset;
+
+                    & + * {
+                        margin-left: .4em;
+                    }
+                }
             }
 
             &__flipFace {
@@ -765,6 +941,10 @@
                 cursor: pointer;
                 transition: transform .5s ease-out;
                 transform-style: preserve-3d;
+
+                @include for-phone {
+                    display: none;
+                }
 
                 & + * {
                     margin-top: 5em;
@@ -804,16 +984,37 @@
                 top: -1.2em;
                 left: -10%;
                 z-index: 30;
+
+                @include for-phone {
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    width: 3.5em;
+
+                    &:hover {
+                        filter: drop-shadow(0px 0px 10px var(--yellowClr))
+                    }
+                }
             }
 
             &__picture--bigger {
                 width: 6.5em;
                 left: -13%;
+
+                @include for-phone {
+                    left: unset;
+                    width: 5.5em;
+                }
             }
 
             &__picture--bigger2 {
                 width: 5.5em;
                 left: -11%;
+
+                @include for-phone {
+                    left: unset;
+                    width: 4.5em;
+                }
             }
 
             &__title {
@@ -834,6 +1035,10 @@
             @include dispFlex(column, space-between, center, nowrap);
             width: 58%;
             height: 78%;
+
+            @include for-phone {
+                width: 100%;
+            }
 
             /*&__title {
                 position: relative;
@@ -1004,6 +1209,8 @@
 
 .content:nth-of-type(6) {
 
+    z-index: 500;
+
     display: none;
     //@include dispFlex(column, space-around, center, nowrap);
     background-color: var(--blackClr);
@@ -1038,24 +1245,42 @@
 
 .content:nth-of-type(7) {
 
+    height: 100%;
+
     @include dispFlex(column, space-around, center, nowrap);
     background-color: var(--blackClr);
+
+    box-shadow: -100px 30px 60px var(--blackClr), 100px 30px 60px var(--blackClr), -200px 30px 60px var(--blackClr), 200px 30px 60px var(--blackClr);
 
     .titleContainer {
 
         color: var(--whiteClr);
         font-size: 3em;
-        text-align: center
+        text-align: center;
+        margin-bottom: 1.3em;
     }
 
     .content__bottom {
 
         @include dispFlex(column, space-around, center, nowrap);
         height: 80%;
-        width: 60%;
+        width: 70%;
+
+        @include for-phone {
+            width: 100%;
+        }
 
         .team {
             @include dispFlex(column, space-between, center, nowrap);
+            width: 100%;
+
+            @include for-phone {
+                width: 70%;
+            }
+        }
+
+        .partners {
+            margin: 2em;
             width: 100%;
         }
     }
@@ -1128,12 +1353,40 @@
         margin-top: 5%;
         @include dispFlex(row, space-around, center, wrap);
 
-        img {
-            width: 20%;
+        &__logo {
+            position: relative;
+            width: 10em;
+            height: 100%;
+
+            @include for-phone {
+                width: 7em;
+            }
+
+            &:nth-child(2) {
+                width: 12.5em;
+
+                @include for-phone {
+                    width: 9.5em;
+                }
+            }
+
+            &:last-child {
+                margin-top: 1em
+            };
+
         }
 
-        img:last-child {
-            width: 26%;
+        @include for-phone {
+            .listedPartners__logo:last-child {
+                margin-top: 1.2em;
+            }
+        }
+
+    }
+
+    .background {
+        img {
+            object-fit: fill
         }
     }
 
