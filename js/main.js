@@ -10,8 +10,8 @@ window.addEventListener('scroll', () => {
 
     let firstSectionBg = contentSection[0].querySelector('.background');
 
-    transformOnScroll('translateY', windowOffset, 0.008,'%', translateElement2, firstSectionBg.children[1], 2.5);
-    transformOnScroll('translateY', windowOffset, -0.008,'%', translateElement, firstSectionBg.children[2], -5);
+    if (window.innerWidth > 900) transformOnScroll('translateY', windowOffset, 0.008,'%', translateElement2, firstSectionBg.children[1], 2.5);
+    if (window.innerWidth > 900) transformOnScroll('translateY', windowOffset, -0.008,'%', translateElement, firstSectionBg.children[2], -5);
 
     addClassOnScroll(firstSectionBg, 'brightFilter', 350);
 
@@ -328,6 +328,7 @@ const swiper = new Swiper('.swiper', {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 10,
+    grabCursor: true,
     breakpoints: {
         900: {
             slidesPerView: 4,
