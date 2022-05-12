@@ -409,7 +409,7 @@
 
     @include for-phone {
         padding: 0;
-        box-shadow: -100px 10px 30px var(--blackClr), 100px 10px 30px var(--blackClr), -200px 10px 30px var(--blackClr), 200px 10px 30px var(--blackClr);
+        box-shadow: none;
     }
 
     .content__top {
@@ -529,6 +529,8 @@
 
     @include for-phone {
         height: 100%;
+        z-index: 170;
+        box-shadow: -100px -130px 160px var(--blackClr), 100px -130px 160px var(--blackClr), -200px -130px 160px var(--blackClr), 200px -130px 160px var(--blackClr);
     }
 
     .content__left {
@@ -552,6 +554,7 @@
                 @include for-phone {
                     font-size: 2em;
                     text-align: center;
+                    margin-bottom: 1em;
                 }
             }
         }
@@ -568,8 +571,9 @@
 
             @include for-phone {
                 width: 100%;
-                height: unset;
+                height: 30vh;
                 padding: .5em;
+                margin-top: 1em;
             }
 
             .selectedMiner__title {
@@ -622,7 +626,7 @@
                 @include for-phone {
                     @include dispFlex(column-reverse, space-between, center, nowrap);
                     width: 40%;
-                    margin-bottom: 1em;
+                    margin-bottom: 1.5em;
                 }
             }
 
@@ -801,7 +805,7 @@
         @include for-phone {
             position: absolute;
             right: -6%;
-            top: 10%;
+            top: 5%;
             width: 80%;
             height: 50%;
         }
@@ -880,6 +884,7 @@
 
     @include for-phone {
         padding: 1em;
+        z-index: 180;
     }
 
     .content__top {
@@ -1079,7 +1084,7 @@
                 height: 100%;
                 position: relative;
                 overflow: hidden;
-                //background: var(--blackClr);
+                background: var(--blackClr);
 
                 video {
                     position: absolute;
@@ -1268,6 +1273,10 @@
 
     box-shadow: -100px 30px 60px var(--blackClr), 100px 30px 60px var(--blackClr), -200px 30px 60px var(--blackClr), 200px 30px 60px var(--blackClr);
 
+    @include for-phone {
+        z-index: 190;
+    }
+
     .titleContainer {
 
         color: var(--whiteClr);
@@ -1414,7 +1423,7 @@ footer {
     height: 5vh;
     width: 100%;
     background-color: var(--darkPurpleClr);
-    z-index: 100;
+    z-index: 200;
 
     h4 {
         color: var(--whiteClr);
