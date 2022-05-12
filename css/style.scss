@@ -1382,6 +1382,12 @@
             position: relative;
             width: 10em;
             height: 100%;
+            transition: filter .3s ease-out, transform .4s ease-out;
+
+            &:hover {
+                filter: drop-shadow(-2px -2px 40px var(--purpleClr)) drop-shadow(2px 2px 40px var(--purpleClr));
+                transform: scale(1.05);
+            }
 
             @include for-phone {
                 width: 7em;

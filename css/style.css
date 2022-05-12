@@ -2106,6 +2106,17 @@ body {
   position: relative;
   width: 10em;
   height: 100%;
+  -webkit-transition: -webkit-filter .3s ease-out, -webkit-transform .4s ease-out;
+  transition: -webkit-filter .3s ease-out, -webkit-transform .4s ease-out;
+  transition: filter .3s ease-out, transform .4s ease-out;
+  transition: filter .3s ease-out, transform .4s ease-out, -webkit-filter .3s ease-out, -webkit-transform .4s ease-out;
+}
+
+.content:nth-of-type(7) .listedPartners__logo:hover {
+  -webkit-filter: drop-shadow(-2px -2px 40px var(--purpleClr)) drop-shadow(2px 2px 40px var(--purpleClr));
+          filter: drop-shadow(-2px -2px 40px var(--purpleClr)) drop-shadow(2px 2px 40px var(--purpleClr));
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 @media screen and (max-width: 900px) {
