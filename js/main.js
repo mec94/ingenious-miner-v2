@@ -1,6 +1,5 @@
-const contentSection = document.querySelectorAll('.content');
 
-var windowOffset;
+let windowOffset;
 
 window.addEventListener('scroll', () => {
 
@@ -24,6 +23,9 @@ window.addEventListener('scroll', () => {
     // Scroll Background Second Section
 
     let sideRocksBg = contentSection[1].querySelector('.background');
+    let secondSectionTitle = contentSection[1].querySelector('.content__top');
+
+    if (window.innerWidth > 900) transformOnScroll('translateY', windowOffset, -1,'%', translateElement, secondSectionTitle, -250);
 
     if (window.innerWidth > 900) transformOnScroll('translateY', windowOffset, -0.16,'%', translateElement, sideRocksBg, -50);
 
@@ -46,15 +48,6 @@ function translateElement2(transformation, affectedElement, displacement, maxVal
     }
 }
 
-/*function scaleElement(transformation, affectedElement, displacement, maxValue) {
-    if (displacement <= maxValue) {
-        affectedElement.style.transform = transformation;
-    }
-
-    else {
-        affectedElement.style.transform = 'scale(1)';
-    }
-}*/
 
 function transformOnScroll(transformType, offsetObject, displaceVal, unit, condition, affectedElement, maxValue) {
 
@@ -83,10 +76,6 @@ function addClassOnScroll (element, classEl, offsetRange) {
 const opacity = document.querySelectorAll('.opacity');
 const fade = document.querySelectorAll('.fade');
 
-const observOptions = {
-    rootMargin: '-40%'
-}
-
 const appearOnScreen = new IntersectionObserver((entries) => {
 
     entries.forEach(entry => {
@@ -100,7 +89,7 @@ const appearOnScreen = new IntersectionObserver((entries) => {
         }
     })
 
-}, observOptions);
+}, {});
 
 fade.forEach(element => {
     appearOnScreen.observe(element);
@@ -187,16 +176,8 @@ let minerSelectionBar = contentSection[3].querySelector('.minerChoice__selection
 let minerDisplay = contentSection[3].querySelector('.selectedMiner');
 var movingCircle = contentSection[3].querySelector('.minerChoice .movingCircle');
 
-let minerName = ['Mercenario', 'Pionero', 'Principiante', 'Experto', 'Empresario'];
+
 let minerPicture = ['expertMinerAnimated', 'amateurMinerAnimated', 'amateurMinerAnimated', 'expertMinerAnimated', 'businessmanMinerAnimated'];
-let minerInfo = 
-    [
-        '“Tu dame los créditos y luego hare lo que digas” <br> Este minero no es muy amigable pero puede servirte por un rato, puedes alquilarlo en el mercado negro por 7 días y tendrá un costo de 70 CM.',
-        '“Salve Sam el primero de nosotros.” <br> Los pioneros fueron los primeros en llegar a Minéria, y no están disponibles a la venta, los poseedores de estos podrán, jugar partidas y obtener Medallas de Honor Minero para poder ascenderlo a Minero Principiante.',
-        '“Perdón ¿Tu sabrías decirme donde tengo que picar?” <br> El minero Principiante es un NFT que te permite jugar el juego de por vida, además que con su compra obtendrás 500 CM de regalo si lo compras por 2000 CM en la sección de ofertas en el juego, también puedes comprarlo a otro usuario en el Mercado Negro, pero recuerda que esos vendrán sin CM.',
-        '“Oye tu, deja de actuar como un Turister, y pica que necesitamos mas carbón” <br> El NFT Experto es uno de los mas valorados, por su posibilidad de dar becas y aumentar ese numero con Medallas de Honor, puede ser obtenido en el Mercado Negro, **o en ofertas a 8000 CM y viene con 2000 CM de regalo, y 3 espacios de becas disponibles.',
-        '”¡Vamos pongan las dinamitas por ahí, quiero todos esos Diamantes!” <br> El Avaro del continente quiere todo para el, pero si no tienes NFT puedes aprovecharlos para jugar en sus becas ya que cuentan con 10 espacios para becas, valen 22000 CM y vienen con 5500 CM** de regalos. Los puedes comprar en la sección de ofertas, no creemos que encuentres en el Mercado Negro, pero prueba suerte.',
-    ]
 
 minerSelection.forEach((miner, index) => {
     miner.addEventListener('click', () => {
@@ -204,8 +185,8 @@ minerSelection.forEach((miner, index) => {
         minerDisplay.querySelectorAll('.selectedMiner__image')[index].classList.add('show');
         contentSection[3].querySelector('.minerChoice__additionalInfo.active').classList.remove('active');
         minerSelection[index].firstElementChild.classList.add('active');
-        contentSection[3].querySelector('.selectedMiner__info h4').textContent = minerName[index];
-        contentSection[3].querySelector('.selectedMiner__info p').innerHTML = minerInfo[index];
+        contentSection[3].querySelector('.selectedMiner__info h4').textContent = minerInfoTitle[index];
+        contentSection[3].querySelector('.selectedMiner__info p').innerHTML = minerInfoDescription[index];
 
         contentSection[3].querySelector('.minerChoice__picture.colored').classList.remove('colored');
         contentSection[3].querySelectorAll('.minerChoice__picture')[index].classList.add('colored');
@@ -265,13 +246,6 @@ selectedMine.querySelector('.selectedMine__picture .playButton').addEventListene
     }
 })
 
-let mineTitle =
-    [
-        'Video Mina Subterránea',
-        'Video Mina Subacuática',
-        'Mina Desértica',
-        'Mina Cielo Abierto'
-    ]
 
 let mineContent =
     [
@@ -303,7 +277,7 @@ minesSelector.forEach((mineType, index) => {
 
 // Second Section Title Animation
 
-let seasonTitle = document.querySelector('.seasonTitle');
+let seasonTitle = contentSection[1].querySelector('.seasonTitle');
 seasonTitle.firstElementChild.innerHTML = seasonTitle.textContent.replace(/\S/g, "<span>$&</span>");
 
     anime.timeline({
@@ -327,22 +301,26 @@ const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: true,
     slidesPerView: 1,
+    autoHeight: false,
+    centeredSlides: true,
+    centeredSlideBounds: true,
     spaceBetween: 10,
     grabCursor: true,
     breakpoints: {
         900: {
             slidesPerView: 4,
-            spaceBetween: 30
+            spaceBetween: 30,
+            initialSlide: 1
         },
     },
   
-    // And if we need scrollbar
     scrollbar: {
       el: '.swiper-scrollbar',
     },
   });
 
 //Team Section Category Selector
+
 let slide = document.querySelectorAll('.swiper-slide');
 let teamCategorySelector = document.querySelector('.teamCategorySelBar').querySelectorAll('.teamCategorySelBar__item');
 
@@ -358,17 +336,27 @@ teamCategorySelector.forEach((teamCategory, index )=> {
 
         switch (index) {
             case 0:
-                swiper.slideToLoop(0);
+                swiper.slideToLoop(1);
             break;
             case 1:
-                swiper.slideToLoop(3);
+                swiper.slideToLoop(4);
             break;
             case 2: 
-                swiper.slideToLoop(6);
-                //slide[15].style.opacity = '0';
+                swiper.slideToLoop(7);
             break;
             case 3:
-                swiper.slideToLoop(8);
+                swiper.slideToLoop(11);
         }
+    })
+})
+
+
+//Team Section Flip Card w/ Info
+
+let teamCards = document.querySelectorAll('.swiper-slide .swiper-slide-img');
+
+teamCards.forEach((card) => {
+    card.addEventListener('click', function flipCard() {
+        card.classList.toggle('isFlipped');
     })
 })

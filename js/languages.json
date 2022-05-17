@@ -1,0 +1,224 @@
+{
+    "es": {
+        "section": [
+            {
+                "ctaLinks": ["Juga ahora", "Whitepaper"],
+                "socialMedia": "Siguenos en nuestras redes"
+            },
+            {
+                "seasonTitle": "Temporada de derrumbes"
+            },
+            {
+                "minesSectionTitle": "Bienvenido a las minas",
+                "minesSectionSubtitle": "Aprende a ser un minero",
+                "minesCtaButton": "Comenzá"
+            },
+            {
+                "minersSectionTitle": "Selecciona tu minero",
+                "minersNames": ["Mercenario", "Pionero", "Principiante", "Experto", "Empresario"],
+                "minerInfoTitle": 
+                    [
+                        "Minero Mercenario",
+                        "Minero Pionero",
+                        "Minero Principiante",
+                        "Minero Experto",
+                        "Minero Empresario"
+                    ],
+                "minerInfoDescription":
+                [
+                    "“Tu dame los créditos y luego hare lo que digas” \r Este minero no es muy amigable pero puede servirte por un rato, puedes alquilarlo en el mercado negro por 7 días y tendrá un costo de 70 CM.",
+                    "“Salve Sam el primero de nosotros.” \r Los pioneros fueron los primeros en llegar a Minéria, y no están disponibles a la venta, los poseedores de estos podrán, jugar partidas y obtener Medallas de Honor Minero para poder ascenderlo a Minero Principiante.",
+                    "“Perdón ¿Tu sabrías decirme donde tengo que picar?” \r El minero Principiante es un NFT que te permite jugar el juego de por vida, además que con su compra obtendrás 500 CM de regalo si lo compras por 2000 CM en la sección de ofertas en el juego, también puedes comprarlo a otro usuario en el Mercado Negro, pero recuerda que esos vendrán sin CM.",
+                    "“Oye tu, deja de actuar como un Turister, y pica que necesitamos mas carbón” \r El NFT Experto es uno de los mas valorados, por su posibilidad de dar becas y aumentar ese numero con Medallas de Honor, puede ser obtenido en el Mercado Negro, **o en ofertas a 8000 CM y viene con 2000 CM de regalo, y 3 espacios de becas disponibles.",
+                    "”¡Vamos pongan las dinamitas por ahí, quiero todos esos Diamantes!” \r El Avaro del continente quiere todo para el, pero si no tienes NFT puedes aprovecharlos para jugar en sus becas ya que cuentan con 10 espacios para becas, valen 22000 CM y vienen con 5500 CM** de regalos. Los puedes comprar en la sección de ofertas, no creemos que encuentres en el Mercado Negro, pero prueba suerte."
+                ]
+            },
+            {
+                "gameModesSectionTitle": "Modos de juego",
+                "minesFrontTitle":
+                    [
+                        "Mina Subterránea",
+                        "Mina Subacuática",
+                        "Mina Desértica",
+                        "Mina Cielo Abierto"
+                    ],
+                "minesFlippedTitle":
+                    [
+                        "Próximamente",
+                        "Próximamente",
+                        "Próximamente",
+                        "Próximamente"
+                    ]
+            },
+            {
+                "teamSectionTitle": "Equipo",
+                "teamRoles":
+                    [
+                        "CEO & Founder",
+                        "COO & Founder",
+                        "Dirección General",
+                        "Líder de Programación",
+                        "Lider de Marketing",
+                        "Líder de Administración",
+                        "Líder de Exchange",
+                        "Programación Front-End",
+                        "Diseño Web y Frontend",
+                        "Administración de Discord",
+                        "Research & Story Telling",
+                        "Diseñadora Gráfica",
+                        "Social Media Manager"
+                    ],
+                "partnersSectionTitle": "Partners"
+            }
+        ]
+    },
+
+    "pt": {
+        "section": [
+            {
+                "ctaLinks": ["Jogar Ahora!", "Whitepaper"],
+                "socialMedia": "Siga-nos em nossas redes"
+            },
+            {
+                "seasonTitle": "Temporada de deslizamento de terra"
+            },
+            {
+                "minesSectionTitle": "Bem-vindo as minas",
+                "minesSectionSubtitle": "Aprenda a ser mineiro",
+                "minesCtaButton": "Começar"
+            },
+            {
+                "minersSectionTitle": "Selecione teu mineiro",
+                "minersNames": ["Mercenário", "Pioneiro", "Iniciante", "Experto", "Empresário"],
+                "minerInfoTitle": 
+                    [
+                        "Mineiro Mercenário",
+                        "Mineiro Pioneiro",
+                        "Mineiro Iniciante",
+                        "Mineiro Experto",
+                        "Mineiro Empresário"
+                    ],
+                "minerInfoDescription":
+                [
+                    "“Tu dame los créditos y luego hare lo que digas” \r Este minero no es muy amigable pero puede servirte por un rato, puedes alquilarlo en el mercado negro por 7 días y tendrá un costo de 70 CM.",
+                    "“Salve Sam el primero de nosotros.” \r Los pioneros fueron los primeros en llegar a Minéria, y no están disponibles a la venta, los poseedores de estos podrán, jugar partidas y obtener Medallas de Honor Minero para poder ascenderlo a Minero Principiante.",
+                    "“Perdón ¿Tu sabrías decirme donde tengo que picar?” \r El minero Principiante es un NFT que te permite jugar el juego de por vida, además que con su compra obtendrás 500 CM de regalo si lo compras por 2000 CM en la sección de ofertas en el juego, también puedes comprarlo a otro usuario en el Mercado Negro, pero recuerda que esos vendrán sin CM.",
+                    "“Oye tu, deja de actuar como un Turister, y pica que necesitamos mas carbón” \r El NFT Experto es uno de los mas valorados, por su posibilidad de dar becas y aumentar ese numero con Medallas de Honor, puede ser obtenido en el Mercado Negro, **o en ofertas a 8000 CM y viene con 2000 CM de regalo, y 3 espacios de becas disponibles.",
+                    "”¡Vamos pongan las dinamitas por ahí, quiero todos esos Diamantes!” \r El Avaro del continente quiere todo para el, pero si no tienes NFT puedes aprovecharlos para jugar en sus becas ya que cuentan con 10 espacios para becas, valen 22000 CM y vienen con 5500 CM** de regalos. Los puedes comprar en la sección de ofertas, no creemos que encuentres en el Mercado Negro, pero prueba suerte."
+                ]
+            },
+            {
+                "gameModesSectionTitle": "Modos do jogo",
+                "minesFrontTitle":
+                    [
+                        "Mina Subterrânea",
+                        "Mina Submarina",
+                        "Mina Deserta",
+                        "Mina Céu Aberto"
+                    ],
+                "minesFlippedTitle":
+                    [
+                        "Em breve",
+                        "Em breve",
+                        "Em breve",
+                        "Em breve"
+                    ]
+            },
+            {
+                "teamSectionTitle": "Equipo",
+                "teamRoles":
+                    [
+                        "CEO & Founder",
+                        "COO & Founder",
+                        "Direção Geral",
+                        "Líder de Programaçao",
+                        "Lider de Marketing",
+                        "Líder de Administração",
+                        "Líder de Intercâmbio",
+                        "Programaçao Front-End",
+                        "Desenho Web e Frontend",
+                        "Gerenciamento da Discord",
+                        "Research & Story Telling",
+                        "Diseñadora Gráfica",
+                        "Social Media Manager"
+                    ],
+                "partnersSectionTitle": "Parceiros"
+            }
+        ]
+    },
+
+    "en": {
+        "section": [
+            {
+                "ctaLinks": ["Play Now", "Whitepaper"],
+                "socialMedia": "Follow Us On"
+            },
+            {
+                "seasonTitle": "Landslides Season"
+            },
+            {
+                "minesSectionTitle": "Welcome to the mines",
+                "minesSectionSubtitle": "Learn to be a miner",
+                "minesCtaButton": "Lets Begin!"
+            },
+            {
+                "minersSectionTitle": "Select your miner",
+                "minersNames": ["Mercenary", "Pioneer", "Amateur", "Expert", "Businessman"],
+                "minerInfoTitle": 
+                    [
+                        "Mercenary Miner",
+                        "Pioneer Miner",
+                        "Beginner Miner",
+                        "Expert Miner",
+                        "Businessman Miner"
+                    ],
+                "minerInfoDescription":
+                [
+                    "“Just give me the credits and i'll do whatever you want” \r Este minero no es muy amigable pero puede servirte por un rato, puedes alquilarlo en el mercado negro por 7 días y tendrá un costo de 70 CM.",
+                    "“Save Sam, the first of us.” \r Los pioneros fueron los primeros en llegar a Minéria, y no están disponibles a la venta, los poseedores de estos podrán, jugar partidas y obtener Medallas de Honor Minero para poder ascenderlo a Minero Principiante.",
+                    "“Excuse me ¿Could you tell me where i have to pick?” \r El minero Principiante es un NFT que te permite jugar el juego de por vida, además que con su compra obtendrás 500 CM de regalo si lo compras por 2000 CM en la sección de ofertas en el juego, también puedes comprarlo a otro usuario en el Mercado Negro, pero recuerda que esos vendrán sin CM.",
+                    "“Hey you, stop acting like a tourist, y pica que necesitamos mas carbón” \r El NFT Experto es uno de los mas valorados, por su posibilidad de dar becas y aumentar ese numero con Medallas de Honor, puede ser obtenido en el Mercado Negro, **o en ofertas a 8000 CM y viene con 2000 CM de regalo, y 3 espacios de becas disponibles.",
+                    "”¡Come on, put the dinamites here, i want all these diamonds!” \r El Avaro del continente quiere todo para el, pero si no tienes NFT puedes aprovecharlos para jugar en sus becas ya que cuentan con 10 espacios para becas, valen 22000 CM y vienen con 5500 CM** de regalos. Los puedes comprar en la sección de ofertas, no creemos que encuentres en el Mercado Negro, pero prueba suerte."
+                ]
+            },
+            {
+                "gameModesSectionTitle": "Game Modes",
+                "minesFrontTitle":
+                    [
+                        "Underground Mine",
+                        "Underwater Mine",
+                        "Desert Mine",
+                        "Open-Pit Mine"
+                    ],
+                "minesFlippedTitle":
+                    [
+                        "Coming Soon",
+                        "Coming Soon",
+                        "Coming Soon",
+                        "Coming Soon"
+                    ]
+            },
+            {
+                "teamSectionTitle": "The Team",
+                "teamRoles":
+                    [
+                        "CEO & Founder",
+                        "COO & Founder",
+                        "General Management Lead",
+                        "Development Lead",
+                        "Marketing Lead",
+                        "Administration Lead",
+                        "Exchange Lead",
+                        "Front-End Development",
+                        "Web Design & Front-End",
+                        "Discord Management",
+                        "Research & Story Telling",
+                        "Graphic Designer",
+                        "Social Media Manager"
+                    ],
+                "partnersSectionTitle": "Partners"
+            }
+        ]
+    }
+
+}
