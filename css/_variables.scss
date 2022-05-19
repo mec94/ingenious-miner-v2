@@ -1,6 +1,7 @@
 :root {
     --blackClr: #000000;
     --whiteClr: #FFF;
+    --whiteClr2: rgba(255, 255, 255, .5);
     --whiteOpacityClr: rgba(255, 255, 255, .1);
     --purpleClr: rgb(77, 0, 128);
     --purpleOpacityClr: rgba(77, 0, 128, .7);
@@ -13,6 +14,7 @@
     --yellowOpacityClr: rgba(251, 202, 1, .2);
     --lightYellowClr: rgba(236, 236, 50, 0.542);
     --orangeClr: rgb(241, 107, 18);
+    --orangeOpacityClr: rgba(241, 107, 18, .3);
     --diamondPinkClr: rgb(183 103 205);
     --grayClr: rgb(114, 114, 114);
     --lightBlueClr: rgb(95, 221, 204, .6)

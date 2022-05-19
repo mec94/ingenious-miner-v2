@@ -220,7 +220,7 @@ minerSelection.forEach((miner, index) => {
 
         anime({
             targets: movingCircle.lastElementChild,
-            scaleY: '800%',
+            scaleY: ['0%', '800%'],
             duration: 300,
             delay: 400,
             easing: 'linear'
@@ -293,13 +293,13 @@ seasonTitle.firstElementChild.innerHTML = seasonTitle.textContent.replace(/\S/g,
         endDelay: 2000
     })
 
-// Swiper JS for Team Section
+// Swiper JS for Team Section & Blog/Updates Section
 
 const swiper = new Swiper('.swiper', {
     // Optional parameters
     speed: 1000,
     direction: 'horizontal',
-    loop: true,
+    loop: false,
     slidesPerView: 1,
     autoHeight: false,
     centeredSlides: true,
@@ -318,6 +318,22 @@ const swiper = new Swiper('.swiper', {
       el: '.swiper-scrollbar',
     },
   });
+
+const swiper2 = new Swiper('.blogUpdatesSwiper', {
+    speed: 1000,
+    loop: true,
+    centeredSlides: false,
+    direction: 'horizontal',
+    slidesPerView: 1,
+    centeredSlidesBounds: true,
+    spaceBetween: 0,
+    navigation: {
+        nextEl: '.swiperSelector__right',
+        prevEl: '.swiperSelector__left',
+    }
+})
+
+// Blog Swiper Navigation Buttons
 
 //Team Section Category Selector
 

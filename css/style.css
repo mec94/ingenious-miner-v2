@@ -1,6 +1,7 @@
 :root {
   --blackClr: #000000;
   --whiteClr: #FFF;
+  --whiteClr2: rgba(255, 255, 255, .5);
   --whiteOpacityClr: rgba(255, 255, 255, .1);
   --purpleClr: rgb(77, 0, 128);
   --purpleOpacityClr: rgba(77, 0, 128, .7);
@@ -13,6 +14,7 @@
   --yellowOpacityClr: rgba(251, 202, 1, .2);
   --lightYellowClr: rgba(236, 236, 50, 0.542);
   --orangeClr: rgb(241, 107, 18);
+  --orangeOpacityClr: rgba(241, 107, 18, .3);
   --diamondPinkClr: rgb(183 103 205);
   --grayClr: rgb(114, 114, 114);
   --lightBlueClr: rgb(95, 221, 204, .6)
@@ -1309,6 +1311,8 @@ body {
   height: .8em;
   background: var(--diamondPinkClr);
   z-index: -1;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
 }
@@ -1960,22 +1964,150 @@ body {
 }
 
 .content:nth-of-type(6) {
-  z-index: 500;
-  display: none;
   background-color: var(--blackClr);
+  height: 100%;
+  min-height: 100vh;
 }
 
 .content:nth-of-type(6) .content__top h3 {
   color: var(--whiteClr);
-  font-size: 2em;
+  font-size: 2.6em;
+  text-align: center;
 }
 
 .content:nth-of-type(6) .content__bottom {
-  height: 85%;
-  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 5%;
+  height: 70%;
+  position: relative;
 }
 
-.content:nth-of-type(6) .content__bottom .customMiner {
+.content:nth-of-type(6) .content__bottom .swiperSelector {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 70%;
+  height: 60%;
+  z-index: 50;
+  -webkit-box-shadow: 0 0 20px 0 var(--whiteClr2);
+          box-shadow: 0 0 20px 0 var(--whiteClr2);
+  border-radius: 50px 50px 0 0;
+}
+
+.content:nth-of-type(6) .content__bottom .swiperSelector__left {
+  position: absolute;
+  left: -13.5%;
+  bottom: 4%;
+  padding: 6% 7%;
+  background: var(--blackOpacityClr);
+  border-radius: 40px 0 0 40px;
+  -webkit-box-shadow: 0 0 12px var(--whiteClr2);
+          box-shadow: 0 0 12px var(--whiteClr2);
+  cursor: pointer;
+  z-index: 70;
+}
+
+.content:nth-of-type(6) .content__bottom .swiperSelector__left:hover .swiperSelector__icon {
+  background: var(--darkPurpleClr);
+}
+
+.content:nth-of-type(6) .content__bottom .swiperSelector__right {
+  position: absolute;
+  right: -13.5%;
+  bottom: 4%;
+  padding: 6% 7%;
+  background: var(--blackOpacityClr);
+  border-radius: 0 40px 40px 0;
+  -webkit-box-shadow: 0 0 12px var(--whiteClr2);
+          box-shadow: 0 0 12px var(--whiteClr2);
+  cursor: pointer;
+  z-index: 70;
+}
+
+.content:nth-of-type(6) .content__bottom .swiperSelector__right:hover .swiperSelector__icon {
+  background: var(--darkPurpleClr);
+}
+
+.content:nth-of-type(6) .content__bottom .swiperSelector__icon {
+  position: inherit;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 4em;
+  height: 4em;
+  background: var(--grayClr);
+  border-radius: 50%;
+  z-index: 20;
+  -webkit-transition: background .2s linear;
+  transition: background .2s linear;
+}
+
+.content:nth-of-type(6) .content__bottom .swiperSelector__icon img {
+  position: inherit;
+  width: 60%;
+  height: 60%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.content:nth-of-type(6) .content__bottom .blogUpdatesSwiper {
+  border-radius: 50px;
+  width: 70%;
+  height: 80%;
+  overflow: hidden;
+  z-index: 60;
+}
+
+.content:nth-of-type(6) .content__bottom .featured-post {
+  cursor: pointer;
+}
+
+.content:nth-of-type(6) .content__bottom .featured-post__picture {
+  height: 50%;
+  z-index: 30;
+  overflow: hidden;
+}
+
+.content:nth-of-type(6) .content__bottom .featured-post__picture:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.content:nth-of-type(6) .content__bottom .featured-post__picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  -webkit-transition: -webkit-transform .4s ease-out;
+  transition: -webkit-transform .4s ease-out;
+  transition: transform .4s ease-out;
+  transition: transform .4s ease-out, -webkit-transform .4s ease-out;
+}
+
+.content:nth-of-type(6) .content__bottom .featured-post__about {
+  height: 50%;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1989,13 +2121,41 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 2em 2em 1.8em;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, var(--blackOpacityClr)), to(var(--orangeOpacityClr)));
+  background: linear-gradient(to bottom, var(--blackOpacityClr) 30%, var(--orangeOpacityClr));
 }
 
-.content:nth-of-type(6) .content__bottom .customMiner__picture {
-  width: 15%;
-  height: 100%;
+.content:nth-of-type(6) .content__bottom .featured-post__about::before {
+  content: url("../img/pickAxeShield.png");
+  position: absolute;
+  top: -18%;
+  left: 48%;
+  width: 3em;
+  height: 3em;
+}
+
+.content:nth-of-type(6) .content__bottom .featured-post__title {
+  color: var(--whiteClr);
+  font-size: 4.5em;
+  text-align: center;
+  text-transform: none;
+}
+
+.content:nth-of-type(6) .content__bottom .featured-post__title::first-letter {
+  text-transform: uppercase;
+}
+
+.content:nth-of-type(6) .content__bottom .featured-post__description {
+  margin-top: 1.2em;
+  color: var(--whiteClr);
+  width: 80%;
+  font-size: 1.15em;
+  line-height: 1.4;
+  text-align: center;
+  font-weight: lighter;
 }
 
 .content:nth-of-type(7) {
