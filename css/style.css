@@ -2088,8 +2088,8 @@ body {
 }
 
 .content:nth-of-type(6) .content__bottom .featured-post__picture:hover img {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.04) rotate(-0.5deg);
+          transform: scale(1.04) rotate(-0.5deg);
 }
 
 .content:nth-of-type(6) .content__bottom .featured-post__picture img {
