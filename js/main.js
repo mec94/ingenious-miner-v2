@@ -299,7 +299,7 @@ const swiper = new Swiper('.swiper', {
     // Optional parameters
     speed: 1000,
     direction: 'horizontal',
-    loop: false,
+    loop: true,
     slidesPerView: 1,
     autoHeight: false,
     centeredSlides: true,
@@ -319,21 +319,7 @@ const swiper = new Swiper('.swiper', {
     },
   });
 
-const swiper2 = new Swiper('.blogUpdatesSwiper', {
-    speed: 1000,
-    loop: true,
-    centeredSlides: false,
-    direction: 'horizontal',
-    slidesPerView: 1,
-    centeredSlidesBounds: true,
-    spaceBetween: 0,
-    navigation: {
-        nextEl: '.swiperSelector__right',
-        prevEl: '.swiperSelector__left',
-    }
-})
 
-// Blog Swiper Navigation Buttons
 
 //Team Section Category Selector
 
@@ -376,3 +362,60 @@ teamCards.forEach((card) => {
         card.classList.toggle('isFlipped');
     })
 })
+
+// Blog Updates Section
+let wpPosts = getWpData(addWPPost);
+
+async function getWpData(callback) {
+    let res = await fetch('https://ingeniousminer.io/actualizaciones/wp-json/wp/v2/posts?per_page=10&categories=7,4');
+    wpPosts = await res.json();
+    callback();
+}
+
+const swiper2 = new Swiper('.blogUpdatesSwiper', {
+    speed: 1000,
+    loop: true,
+    centeredSlides: false,
+    direction: 'horizontal',
+    slidesPerView: 1,
+    centeredSlidesBounds: true,
+    spaceBetween: 0,
+    navigation: {
+        nextEl: '.swiperSelector__right',
+        prevEl: '.swiperSelector__left',
+    }
+})
+
+function addWPPost() {
+
+    wpPosts.forEach((post) => {
+
+        let postLink = post.link;
+        let postImage = post.yoast_head_json.og_image[0].url;
+        let postTitle = post.title.rendered;
+        let postDescription = post.yoast_head_json.description;
+
+        appendPost(postLink, postImage, postTitle, postDescription);
+    })
+
+}
+
+function appendPost(link, picture, title, description) {
+    swiper2.appendSlide(
+        `<div class="featured-post__item swiper-slide">
+        <a class="featured-post__link" href="${link}" target="_blank">
+            <div class="featured-post__picture">
+                <img src="${picture}" alt="">
+            </div>
+            <div class="featured-post__about">
+                <h3 class="featured-post__title">
+                    ${title}
+                </h3>
+                <p class="featured-post__description">
+                    ${description}
+                </p>
+            </div>
+        </a>
+    </div>`
+    )
+}

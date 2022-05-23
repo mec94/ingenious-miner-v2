@@ -11,11 +11,11 @@ img {
 
 a {
     text-decoration: none;
-    font-family: var(--bigFont);
+    font-family: var(--rifficFreeBold)
 }
 
 h2, h3, h4 {
-    font-family: 'RifficFree-Bold', sans-serif;
+    font-family: var(--rifficFreeBold);
     text-transform: uppercase;
 }
 
@@ -72,7 +72,7 @@ body {
 
 .fade {
     filter: brightness(20%);
-    transition: filter 1.5s ease-out;
+    transition: filter 1.2s ease-out;
 }
 
 .fade.appears {

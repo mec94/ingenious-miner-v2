@@ -4,12 +4,12 @@ const contentSection = document.querySelectorAll('.content');
 
 // Get language data from JSON file
 
-let lang = loadJSON()
+let lang = loadLangJSON()
 
-async function loadJSON() {
+async function loadLangJSON() {
     let response = await fetch('./js/languages.json');
     lang = await response.json();
-    switchLanguage('es')
+    switchLanguage('es');
 }
 
 // Language switch button
@@ -56,8 +56,7 @@ langSelector.querySelectorAll('button').forEach( (btn) => {
 let minerInfoTitle;
 let minerInfoDescription;
 
-
-function switchLanguage(choice) {
+async function switchLanguage(choice) {
 
     //First Section
 
