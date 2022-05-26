@@ -51,6 +51,9 @@
                     ]
             },
             {
+                "updatesSectionTitle": "Actualizaciones"
+            },
+            {
                 "teamSectionTitle": "Equipo",
                 "teamRoles":
                     [
@@ -76,19 +79,19 @@
     "pt": {
         "section": [
             {
-                "ctaLinks": ["Jogar Ahora!", "Whitepaper"],
-                "socialMedia": "Siga-nos em nossas redes"
+                "ctaLinks": ["Jogar Agora!", "Whitepaper"],
+                "socialMedia": "Siga-nos nas redes sociais"
             },
             {
-                "seasonTitle": "Temporada de deslizamento de terra"
+                "seasonTitle": "Temporada de deslizamentos de terra"
             },
             {
                 "minesSectionTitle": "Bem-vindo as minas",
-                "minesSectionSubtitle": "Aprenda a ser mineiro",
+                "minesSectionSubtitle": "Aprenda a ser um mineiro",
                 "minesCtaButton": "Começar"
             },
             {
-                "minersSectionTitle": "Selecione teu mineiro",
+                "minersSectionTitle": "Selecione seu minero",
                 "minersNames": ["Mercenário", "Pioneiro", "Iniciante", "Experto", "Empresário"],
                 "minerInfoTitle": 
                     [
@@ -100,11 +103,11 @@
                     ],
                 "minerInfoDescription":
                 [
-                    "“Tu dame los créditos y luego hare lo que digas” \r Este minero no es muy amigable pero puede servirte por un rato, puedes alquilarlo en el mercado negro por 7 días y tendrá un costo de 70 CM.",
-                    "“Salve Sam el primero de nosotros.” \r Los pioneros fueron los primeros en llegar a Minéria, y no están disponibles a la venta, los poseedores de estos podrán, jugar partidas y obtener Medallas de Honor Minero para poder ascenderlo a Minero Principiante.",
-                    "“Perdón ¿Tu sabrías decirme donde tengo que picar?” \r El minero Principiante es un NFT que te permite jugar el juego de por vida, además que con su compra obtendrás 500 CM de regalo si lo compras por 2000 CM en la sección de ofertas en el juego, también puedes comprarlo a otro usuario en el Mercado Negro, pero recuerda que esos vendrán sin CM.",
-                    "“Oye tu, deja de actuar como un Turister, y pica que necesitamos mas carbón” \r El NFT Experto es uno de los mas valorados, por su posibilidad de dar becas y aumentar ese numero con Medallas de Honor, puede ser obtenido en el Mercado Negro, **o en ofertas a 8000 CM y viene con 2000 CM de regalo, y 3 espacios de becas disponibles.",
-                    "”¡Vamos pongan las dinamitas por ahí, quiero todos esos Diamantes!” \r El Avaro del continente quiere todo para el, pero si no tienes NFT puedes aprovecharlos para jugar en sus becas ya que cuentan con 10 espacios para becas, valen 22000 CM y vienen con 5500 CM** de regalos. Los puedes comprar en la sección de ofertas, no creemos que encuentres en el Mercado Negro, pero prueba suerte."
+                    "“Você me dá os créditos e então eu farei o que você diz” \r Este mineiro não é muito amigável, mas pode atendê-lo por um tempo, você pode alugá-lo no mercado negro por 7 dias e custará 70 CM.",
+                    "“Salve Sam o primeiro de nós.” \r Os pioneiros foram os primeiros a chegar em Minéria, e não estão disponíveis para venda, os donos destes poderão jogar e obter Medalhas de Honra de Mineração para serem promovidos a Mineiro Iniciante.",
+                    "“Com licença, você poderia me dizer onde eu tenho que picar?” \r O minerador iniciante é um NFT que permite que você jogue o jogo por toda a vida, também com sua compra você receberá 500 CM de presente se você o comprar por 2000 CM na seção de ofertas do jogo, você também pode comprá-lo de outro usuário no Mercado Negro, mas lembre-se que eles virão sem CM.",
+                    "“Ei você, pare de agir como um Turista, e precisamos de mais carvão” \r  O NFT Experto é um dos mais valorizados, por sua possibilidade de conceder bolsas e aumentar esse número com Medalhas de Honra, ele pode ser obtido no Mercado Negro, **ou em ofertas de 8000 CM e vem com brinde de 2000 CM, e 3 vagas de bolsas disponíveis.",
+                    "”Vamos colocar as dinamites ali, eu quero todos esses diamantes!” \r O Empresario quer tudo para si, mas se não tiver NFTs pode aproveitá-los para jogar pelas suas bolsas pois têm 10 vagas, valem 22000 CM e vêm com 5500 CM** em brindes. Você pode comprá-los na seção de vendas, não achamos que você os encontrará no Mercado Negro, mas tente a sorte."
                 ]
             },
             {
@@ -125,7 +128,10 @@
                     ]
             },
             {
-                "teamSectionTitle": "Equipo",
+                "updatesSectionTitle": "Atualizações"
+            },
+            {
+                "teamSectionTitle": "Equipe",
                 "teamRoles":
                     [
                         "CEO & Founder",
@@ -139,7 +145,7 @@
                         "Desenho Web e Frontend",
                         "Gerenciamento da Discord",
                         "Research & Story Telling",
-                        "Diseñadora Gráfica",
+                        "Desenho Gráfico",
                         "Social Media Manager"
                     ],
                 "partnersSectionTitle": "Parceiros"
@@ -174,11 +180,11 @@
                     ],
                 "minerInfoDescription":
                 [
-                    "“Just give me the credits and i'll do whatever you want” \r Este minero no es muy amigable pero puede servirte por un rato, puedes alquilarlo en el mercado negro por 7 días y tendrá un costo de 70 CM.",
-                    "“Save Sam, the first of us.” \r Los pioneros fueron los primeros en llegar a Minéria, y no están disponibles a la venta, los poseedores de estos podrán, jugar partidas y obtener Medallas de Honor Minero para poder ascenderlo a Minero Principiante.",
-                    "“Excuse me ¿Could you tell me where i have to pick?” \r El minero Principiante es un NFT que te permite jugar el juego de por vida, además que con su compra obtendrás 500 CM de regalo si lo compras por 2000 CM en la sección de ofertas en el juego, también puedes comprarlo a otro usuario en el Mercado Negro, pero recuerda que esos vendrán sin CM.",
-                    "“Hey you, stop acting like a tourist, y pica que necesitamos mas carbón” \r El NFT Experto es uno de los mas valorados, por su posibilidad de dar becas y aumentar ese numero con Medallas de Honor, puede ser obtenido en el Mercado Negro, **o en ofertas a 8000 CM y viene con 2000 CM de regalo, y 3 espacios de becas disponibles.",
-                    "”¡Come on, put the dinamites here, i want all these diamonds!” \r El Avaro del continente quiere todo para el, pero si no tienes NFT puedes aprovecharlos para jugar en sus becas ya que cuentan con 10 espacios para becas, valen 22000 CM y vienen con 5500 CM** de regalos. Los puedes comprar en la sección de ofertas, no creemos que encuentres en el Mercado Negro, pero prueba suerte."
+                    "“Just give me the credits and i'll do whatever you want” \r This miner isn't known for being very friendly, but it can serve you for a while. You can rent it on the black market for a week at a cost of 70 Miner Credits.",
+                    "“Save Sam, the first of us”. \r The pioneers were the first ones to arrive at Mineria, and they're not available for sale at the moment. The owners of these are able to start matches & obtain Mining Medals of Honor in order to be promoted to Beginner Miner.",
+                    "“Excuse me ¿Could you tell me where i have to pick?” \r The beginner miner is an NFT that allows you to play the game for a lifetime, plus with it's purchase you'll be gifted 500CM if you buy it for 2K Miners Credits from the game's offer section. You can also obtain it from another user in the black market, but remember those will come without Miner Credits.",
+                    "“Hey you, stop acting like a tourist, and keep itching that we need more coal” \r The Expert NFT is one of the most valued. due to the possibility to give scholarships and increase that number with Miner Medals of Honor that can be obtained from the black market ** or in offers at 8K Credit Miners that come with 2K MC as a gift & 3 scholarship slots.",
+                    "”¡Come on, put the dinamites here, i want all these diamonds!” \r The businessman of the country wants everything for himself, but if you don't have any NFTs you can take advantage of them as they come with 10 scholarship slots. These cost 22000 Miner Credits & they come with 5500 MC as a gift. You can buy them from the offers section. We don't think you'll find any of these in the black market, but try your luck!"
                 ]
             },
             {
@@ -197,6 +203,9 @@
                         "Coming Soon",
                         "Coming Soon"
                     ]
+            },
+            {
+                "updatesSectionTitle": "Updates"
             },
             {
                 "teamSectionTitle": "The Team",

@@ -444,7 +444,7 @@ body {
     transform: translateX(-100%);
   }
   to {
-    transform: translateX(350%);
+    transform: translateX(100vw);
   }
 }
 @keyframes moveCloud {
@@ -452,7 +452,7 @@ body {
     transform: translateX(-100%);
   }
   to {
-    transform: translateX(350%);
+    transform: translateX(100vw);
   }
 }
 
@@ -1230,7 +1230,7 @@ body {
   }
 }
 .content:nth-of-type(5) .content__bottom .selectedMine__picture {
-  border: 1.5px solid var(--whiteOpacityClr);
+  border: 2px solid var(--whiteOpacityClr);
   border-radius: 15px;
   width: 100%;
   height: 100%;
@@ -1240,7 +1240,8 @@ body {
 }
 .content:nth-of-type(5) .content__bottom .selectedMine__picture video {
   position: absolute;
-  width: 100%;
+  width: 101%;
+  left: -1%;
   height: 102%;
   top: -1%;
   left: 0;
@@ -1494,6 +1495,10 @@ body {
   height: 100%;
   cursor: pointer;
 }
+.content:nth-of-type(6) .content__bottom .featured-post__link {
+  width: 100%;
+  height: 100%;
+}
 .content:nth-of-type(6) .content__bottom .featured-post__item {
   display: block;
   display: flex;
@@ -1503,7 +1508,7 @@ body {
   flex-wrap: nowrap;
 }
 .content:nth-of-type(6) .content__bottom .featured-post__picture {
-  height: 50vh;
+  height: 55vh;
   overflow: hidden;
 }
 .content:nth-of-type(6) .content__bottom .featured-post__picture:hover img {
@@ -1514,8 +1519,8 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: 50% 50%;
-     object-position: 50% 50%;
+  -o-object-position: 50% 0%;
+     object-position: 50% 0%;
   transition: transform 0.4s ease-out;
 }
 .content:nth-of-type(6) .content__bottom .featured-post__about {
@@ -1525,13 +1530,13 @@ body {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  padding: 2.5em 2em 1.5em;
+  padding: 2.5em 1.5em 1.8em;
   background: linear-gradient(to bottom, var(--blackOpacityClr) 30%, var(--orangeOpacityClr));
   border-radius: 0 0 50px 50px;
 }
 @media screen and (max-width: 900px) {
   .content:nth-of-type(6) .content__bottom .featured-post__about {
-    padding: 1em;
+    padding: 2.5em 1.2em 1.2em;
   }
 }
 .content:nth-of-type(6) .content__bottom .featured-post__about::before {
@@ -1552,6 +1557,11 @@ body {
 }
 .content:nth-of-type(6) .content__bottom .featured-post__title::first-letter {
   text-transform: uppercase;
+}
+@media screen and (max-width: 900px) {
+  .content:nth-of-type(6) .content__bottom .featured-post__title {
+    font-size: 2em;
+  }
 }
 .content:nth-of-type(6) .content__bottom .featured-post__description {
   margin-top: 1.2em;

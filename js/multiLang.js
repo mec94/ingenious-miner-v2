@@ -123,13 +123,18 @@ async function switchLanguage(choice) {
         item.innerHTML = lang[choice].section[4].minesFlippedTitle[index];
     })
 
+    //Latest Updates Section (Wordpress Blog)
+
+    let latestUpdatesTitle = contentSection[5].querySelector('.content__top h3');
+    latestUpdatesTitle.innerHTML = lang[choice].section[5].updatesSectionTitle;
+
     //Last Section (Team)
 
     let teamSectionTitle = contentSection[6].querySelector('.content__top .titleContainer h3');
     let teamRoles = Array.from(contentSection[6].querySelectorAll('.swiper-wrapper .swiper-slide p'));
     let partnersTitle = contentSection[6].querySelector('.content__bottom .titleContainer h3');
 
-    teamSectionTitle.innerHTML = lang[choice].section[5].teamSectionTitle;
+    teamSectionTitle.innerHTML = lang[choice].section[6].teamSectionTitle;
 
     // Swiper JS creates additional element for context. So we have to filter the ones that contains the descriptions we want to modify.
 
@@ -140,9 +145,9 @@ async function switchLanguage(choice) {
     })
 
     teamRolesFiltered.forEach((teamMember, index) => {
-        teamMember.innerHTML = lang[choice].section[5].teamRoles[index];
+        teamMember.innerHTML = lang[choice].section[6].teamRoles[index];
     })
 
-    partnersTitle.innerHTML = lang[choice].section[5].partnersSectionTitle;
+    partnersTitle.innerHTML = lang[choice].section[6].partnersSectionTitle;
 
 }
