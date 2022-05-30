@@ -51,14 +51,17 @@
                     ]
             },
             {
+
+            },
+            {
                 "updatesSectionTitle": "Actualizaciones"
             },
             {
                 "teamSectionTitle": "Equipo",
                 "teamRoles":
                     [
-                        "CEO & Founder",
                         "COO & Founder",
+                        "CEO & Founder",
                         "Dirección General",
                         "Líder de Programación",
                         "Lider de Marketing",
@@ -128,14 +131,17 @@
                     ]
             },
             {
+
+            },
+            {
                 "updatesSectionTitle": "Atualizações"
             },
             {
                 "teamSectionTitle": "Equipe",
                 "teamRoles":
                     [
-                        "CEO & Founder",
                         "COO & Founder",
+                        "CEO & Founder",
                         "Direção Geral",
                         "Líder de Programaçao",
                         "Lider de Marketing",
@@ -211,8 +217,8 @@
                 "teamSectionTitle": "The Team",
                 "teamRoles":
                     [
-                        "CEO & Founder",
                         "COO & Founder",
+                        "CEO & Founder",
                         "General Management Lead",
                         "Development Lead",
                         "Marketing Lead",

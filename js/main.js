@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 
 let windowOffset;
 
@@ -261,10 +263,13 @@ minesSelector.forEach((mineType, index) => {
 
         if (index == 0 || index == 1) {
             selectedMine.querySelector('.selectedMine__picture .playButton').classList.add('clicked');
-            selectedMine.querySelector('video source').src = `./img/${mineContent[index]}.mp4`;
-            selectedMine.querySelector('video').muted = false;
-            selectedMine.querySelector('video').load();
-            selectedMine.querySelector('video').play();
+
+            let video = selectedMine.querySelector('video');
+
+            video.querySelector('source').src = `./img/${mineContent[index]}.mp4`;
+            video.muted = false;
+            video.load();
+            video.play();
         }
         else {
             mineType.querySelector('.mineSelector__flipFace').classList.toggle('revealed');
@@ -277,8 +282,10 @@ minesSelector.forEach((mineType, index) => {
 
 // Second Section Title Animation
 
-let seasonTitle = contentSection[1].querySelector('.seasonTitle');
-seasonTitle.firstElementChild.innerHTML = seasonTitle.textContent.replace(/\S/g, "<span>$&</span>");
+function animateTitle() {
+
+    let seasonTitle = contentSection[1].querySelector('.seasonTitle');
+    seasonTitle.firstElementChild.innerHTML = seasonTitle.textContent.replace(/\S/g, "<span>$&</span>");
 
     anime.timeline({
         loop: true
@@ -293,6 +300,8 @@ seasonTitle.firstElementChild.innerHTML = seasonTitle.textContent.replace(/\S/g,
         endDelay: 2000
     })
 
+}
+
 // Swiper JS for Team Section & Blog/Updates Section
 
 const swiper = new Swiper('.swiper', {
@@ -301,6 +310,7 @@ const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: true,
     slidesPerView: 1,
+    initialSlide: 1,
     autoHeight: false,
     centeredSlides: true,
     centeredSlideBounds: true,
@@ -376,6 +386,7 @@ const swiper2 = new Swiper('.blogUpdatesSwiper', {
     speed: 1000,
     loop: true,
     centeredSlides: false,
+    initialSlide: 1,
     direction: 'horizontal',
     slidesPerView: 1,
     centeredSlidesBounds: true,
@@ -419,3 +430,255 @@ function appendPost(link, picture, title, description) {
     </div>`
     )
 }
+
+// Avatar Creator Preview
+
+let outfitMainCategories = Array.from(document.querySelectorAll('.outfitSelector__categoryItem'));
+let highlightedItem = document.querySelector('.outfitSelector__previewItem img');
+
+
+class outfitCategory {
+
+    constructor (category, elements) {
+        this.category = category;
+        //this.imagePath = './img/avatarCreator/' + image;
+        this.elements = elements;
+    }
+
+    addSubCategories() {
+
+        var subcategories = document.querySelector('.outfitSelector__subcategories');
+        
+        while (subcategories.lastElementChild) {
+            subcategories.removeChild(subcategories.lastElementChild)
+        }
+
+        this.elements.forEach((subcategory, index) => {
+
+            let el = document.createElement('div');
+            el.className = 'outfitSelector__categoryItem';
+            el.innerHTML = 
+                `<div class="outfitSelector__categoryImage">
+                    <img src="./img/avatarCreator${subcategory[1][0]}" alt="">
+                </div>
+                <div class="outfitSelector__categoryTitle">
+                    <p>${subcategory[0]}</p>
+                </div>`;
+            
+
+            subcategories.appendChild(el);
+
+            el.addEventListener('click', () => {
+
+                this.addHTMLItems(subcategory[1]);
+            })
+
+        })
+        
+    }
+
+    addHTMLItems(subcategory) {
+
+        let outfitDisplay = document.querySelector('.outfitSelector__display');
+
+        while (outfitDisplay.lastElementChild) {
+            outfitDisplay.removeChild(outfitDisplay.lastElementChild);
+        }
+
+        subcategory.forEach((item, index) => {
+
+            let el = document.createElement('div');
+            el.className = 'outfitSelector__itemDisplay';
+            let img = document.createElement('img');
+            img.src = './img/avatarCreator/' + item;
+            el.appendChild(img);
+    
+            outfitDisplay.appendChild(el);
+
+            el.addEventListener('click', () => {
+                highlightedItem.src = img.src;
+            })
+
+        })
+
+    }
+}
+
+let outfitSubcategories = [
+
+    [
+        ['Haircuts',
+            [
+                '/Head/Haircuts/Resource1.png',
+                '/Head/Haircuts/Resource2.png',
+                '/Head/Haircuts/Resource3.png',
+                '/Head/Haircuts/Resource4.png',
+                '/Head/Haircuts/Resource5.png',
+                '/Head/Haircuts/Resource6.png',
+                '/Head/Haircuts/Resource7.png',
+                '/Head/Haircuts/Resource8.png',
+            ]
+        ],
+
+        ['Helmets',
+            [
+                '/Head/Helmets/Resource1.png', 
+                '/Head/Helmets/Resource2.png',
+                '/Head/Helmets/Resource3.png',
+                '/Head/Helmets/Resource4.png',
+            ]
+        ],
+
+        ['Glasses',
+            [
+                '/Head/Glasses/Resource1.png',
+                '/Head/Glasses/Resource2.png',
+                '/Head/Glasses/Resource3.png',
+                '/Head/Glasses/Resource4.png',
+            ]
+        ],
+
+        ['Headphones',
+            [
+                '/Head/Headphones/Resource1.png'
+            ]
+        ],
+
+        ['Masks',
+            [
+                '/Head/Masks/Resource1.png',
+                '/Head/Masks/Resource2.png',
+                '/Head/Masks/Resource3.png',
+                '/Head/Masks/Resource4.png',
+            ]
+        ]
+    ],
+    [
+        ['Shirts',
+            [
+                '/Chest/Shirts/Resource1.png',
+                '/Chest/Shirts/Resource2.png',
+                '/Chest/Shirts/Resource3.png',
+                '/Chest/Shirts/Resource4.png',
+                '/Chest/Shirts/Resource5.png',
+            ]
+        ],
+
+        ['Jackets',
+            [
+                '/Chest/Jackets/Resource1.png',
+                '/Chest/Jackets/Resource2.png',
+                '/Chest/Jackets/Resource3.png',
+                '/Chest/Jackets/Resource4.png',
+            ]
+        ],
+
+        ['Uniforms',
+            [
+                '/Chest/Uniforms/Resource1.png'
+            ]
+        ],
+    ],
+    [
+        ['Gadgets',
+            [
+                '/Hands/Gadgets/Resource1.png',
+                '/Hands/Gadgets/Resource2.png'
+            ]
+        ],
+    ],
+    [
+        ['Belts',
+            [
+                '/Waist/Belts/Resource1.png',
+                '/Waist/Belts/Resource2.png',
+                '/Waist/Belts/Resource3.png',
+                '/Waist/Belts/Resource4.png',
+            ]
+        ],
+
+        ['Harness',
+            [
+                '/Waist/Harness/Resource1.png',
+                '/Waist/Harness/Resource2.png',
+                '/Waist/Harness/Resource3.png',
+            ]
+        ],
+
+        ['Waistbags',
+            [
+                '/Waist/Waistbags/Resource1.png',
+                '/Waist/Waistbags/Resource2.png',
+                '/Waist/Waistbags/Resource3.png',
+                '/Waist/Waistbags/Resource4.png',
+            ]
+        ],
+    ],
+    [
+        ['Trousers',
+            [
+                '/Footlegs/Trousers/Resource1.png',
+                '/Footlegs/Trousers/Resource2.png',
+                '/Footlegs/Trousers/Resource3.png',
+                '/Footlegs/Trousers/Resource4.png',
+                '/Footlegs/Trousers/Resource5.png',
+                '/Footlegs/Trousers/Resource6.png',
+                '/Footlegs/Trousers/Resource7.png',
+                '/Footlegs/Trousers/Resource8.png',
+                '/Footlegs/Trousers/Resource9.png',
+                '/Footlegs/Trousers/Resource10.png',
+            ]
+        ],
+
+        ['Overalls',
+            [
+                '/Footlegs/Overalls/Resource1.png',
+                '/Footlegs/Overalls/Resource2.png',
+            ]
+        ]
+    ],
+    [
+        ['Boots',
+            [
+                '/Shoes/Boots/Resource1.png',
+                '/Shoes/Boots/Resource2.png',
+                '/Shoes/Boots/Resource3.png',
+                '/Shoes/Boots/Resource4.png',
+            ]
+        ],
+    ]
+
+]
+
+let outfits = [
+
+    new outfitCategory('Cabeza', outfitSubcategories[0]),
+    new outfitCategory('Torso', outfitSubcategories[1]),
+    new outfitCategory('Manos', outfitSubcategories[2]),
+    new outfitCategory('Cintura', outfitSubcategories[3]),
+    new outfitCategory('Piernas', outfitSubcategories[4]),
+    new outfitCategory('Calzado', outfitSubcategories[5]),
+]
+
+outfitMainCategories.forEach((category, index) => {
+        category.addEventListener('click', () => {
+
+            //console.log(index)
+            outfits[index].addSubCategories();
+            //outfits[index].addHTMLItems();
+            document.querySelector('.outfitSelector__subcategories').classList.toggle('active');
+
+            outfitMainCategories.forEach(
+                (cat, catIndex) => {
+                    if (catIndex > 0) {
+                        outfitMainCategories[catIndex].classList.toggle('hidden');
+                    }
+                    else {
+                        outfitMainCategories[0].classList.toggle('flipped');
+                    }
+                }
+            )
+          
+        })
+
+    })

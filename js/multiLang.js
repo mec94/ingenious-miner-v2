@@ -4,11 +4,12 @@ const contentSection = document.querySelectorAll('.content');
 
 // Get language data from JSON file
 
-let lang = loadLangJSON()
+let lang = loadJSON()
 
-async function loadLangJSON() {
-    let response = await fetch('./js/languages.json');
-    lang = await response.json();
+async function loadJSON() {
+    const response = await fetch('./js/languages.json');
+    const jsonfile = await response.json();
+    lang = jsonfile;
     switchLanguage('es');
 }
 
@@ -125,16 +126,16 @@ async function switchLanguage(choice) {
 
     //Latest Updates Section (Wordpress Blog)
 
-    let latestUpdatesTitle = contentSection[5].querySelector('.content__top h3');
-    latestUpdatesTitle.innerHTML = lang[choice].section[5].updatesSectionTitle;
+    let latestUpdatesTitle = contentSection[6].querySelector('.content__top h3');
+    latestUpdatesTitle.innerHTML = lang[choice].section[6].updatesSectionTitle;
 
     //Last Section (Team)
 
-    let teamSectionTitle = contentSection[6].querySelector('.content__top .titleContainer h3');
-    let teamRoles = Array.from(contentSection[6].querySelectorAll('.swiper-wrapper .swiper-slide p'));
-    let partnersTitle = contentSection[6].querySelector('.content__bottom .titleContainer h3');
+    let teamSectionTitle = contentSection[7].querySelector('.content__top .titleContainer h3');
+    let teamRoles = Array.from(contentSection[7].querySelectorAll('.swiper-wrapper .swiper-slide p'));
+    let partnersTitle = contentSection[7].querySelector('.content__bottom .titleContainer h3');
 
-    teamSectionTitle.innerHTML = lang[choice].section[6].teamSectionTitle;
+    teamSectionTitle.innerHTML = lang[choice].section[7].teamSectionTitle;
 
     // Swiper JS creates additional element for context. So we have to filter the ones that contains the descriptions we want to modify.
 
@@ -145,9 +146,9 @@ async function switchLanguage(choice) {
     })
 
     teamRolesFiltered.forEach((teamMember, index) => {
-        teamMember.innerHTML = lang[choice].section[6].teamRoles[index];
+        teamMember.innerHTML = lang[choice].section[7].teamRoles[index];
     })
 
-    partnersTitle.innerHTML = lang[choice].section[6].partnersSectionTitle;
+    partnersTitle.innerHTML = lang[choice].section[7].partnersSectionTitle;
 
 }
